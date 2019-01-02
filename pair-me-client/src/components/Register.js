@@ -42,7 +42,8 @@ class Register extends React.Component{
             <div className = 'register-container'>
             <form onSubmit={this.handleLogin}>
             <input type = 'text' name = 'username' value={this.state.username} onChange={this.handleInput} placeholder='Username'></input>
-            <input type = 'password' name = 'password' value={this.state.password} onChange={this.handleInput} placeholder='Password'></input>
+            <input type = 'password' name = 'password1' value={this.state.password1} onChange={this.handleInput} placeholder='Password'></input>
+            <input type = 'password' name = 'password2' value={this.state.password2} onChange={this.handleInput} placeholder='Verify Password'></input>
             <button type = 'submit'>Register yourself!</button>
             </form>
             </div>
