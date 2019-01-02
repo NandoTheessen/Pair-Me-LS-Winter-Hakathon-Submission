@@ -9,7 +9,7 @@ import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import {BrowserRouter as Router } from 'react-router-dom';
 
-const store = createStore( {},
+const store = createStore( () => {},
      
     applyMiddleware(thunk, logger)
   );
