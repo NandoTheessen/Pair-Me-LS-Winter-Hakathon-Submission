@@ -19,3 +19,8 @@ PairMe provides a visual dashboard that makes it easier for Lambda students to f
 - Ask Beacons show student's curriculum (iOS/FSW/DS etc.), cohort (e.g. FSW13), and what module/repository they are working on (e.g. Data Structures).
 - When an Ask is matched with an Offer, a Zoom link is auto-generated and then pushed to the "matchees" via Slack API DMs.
 - The generated meeting is added to the "active meetings" dashboard, showing who's in the meeting and what the meeting is discussing.
+
+**Technologies**
+- Front-end built using React JS
+- Back-end using Express/Node and SQLite
+- Deployed on Firebase
