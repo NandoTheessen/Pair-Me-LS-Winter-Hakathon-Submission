@@ -2,6 +2,7 @@ import axios from 'axios';
 
 export const TEST_SUCCESS = 'TEST_SUCCESS';
 export const TEST_FAILURE = 'TEST_FAILURE';
+export const TESTING = 'TESTING';
 export const ERROR = 'ERROR';
 
 export const testAPI = () => {

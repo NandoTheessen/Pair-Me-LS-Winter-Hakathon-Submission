@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Route } from "react-router-dom";
+import { Route, withRouter } from "react-router-dom";
+import {connect} from 'react-redux';
+import {testAPI} from './actions/index';
 
 class App extends Component {
   render() {
@@ -27,4 +29,16 @@ class App extends Component {
   }
 }
 
-export default App;
+
+const mapStateToProps = state => {
+  return {
+    // state goes here
+    isLoggedIn: state.isLoggedIn,
+  }
+}
+
+export default withRouter(connect(mapStateToProps, {
+  testAPI,
+})(App));
+
+
