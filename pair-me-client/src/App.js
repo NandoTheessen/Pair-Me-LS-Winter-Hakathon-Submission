@@ -6,6 +6,7 @@ import {testAPI} from './actions/index';
 import Navigation from './components/Navigation';
 import Login from './components/Login';
 import Welcome from './components/Welcome';
+import Register from './components/Register';
 
 
 class App extends Component {
@@ -19,7 +20,7 @@ class App extends Component {
         <Switch>
           <Route exact path = '/' component = {Welcome} />
           <Route exact path = '/login' component = {Login} />
-          
+          <Route exact path = '/register' component = {Register} />
           
           
           {/* Routes go here */}
