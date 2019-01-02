@@ -33,10 +33,7 @@
       "*.{js}": [
         "git add"
       ]
-    },
-    "ignore": [
-      "**/dist/*.min.js"
-    ]
+    }
   },
   "browserslist": [
     ">0.2%",
