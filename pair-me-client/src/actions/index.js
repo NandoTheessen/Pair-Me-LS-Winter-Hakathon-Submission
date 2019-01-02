@@ -18,7 +18,7 @@ export const testAPI = () => {
         dispatch({type: TESTING});
 
         sendTest.then(res => {
-            if(res.status == 200){
+            if(res.status === 200){
                 console.log('Success!')
                 dispatch({type: TEST_SUCCESS})
             } else {
