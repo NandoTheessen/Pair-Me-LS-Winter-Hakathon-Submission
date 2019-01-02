@@ -51,12 +51,7 @@ class Register extends React.Component{
     }
 }
 
-const mapStateToProps = state => {
-    return {
-        isLoggedIn: state.isLoggedIn,
-    }
-}
-
-export default withRouter(connect(mapStateToProps, {
+// this mapStateToProps may not be necessary - remove!
+export default withRouter(connect( {}, {
     register,
 })(Register));
