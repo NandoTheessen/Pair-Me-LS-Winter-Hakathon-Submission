@@ -7,7 +7,11 @@ import Login from './Login';
 const Welcome = props => {
     return(
     <div className = 'welcome-container'>
+        <div className = 'welcome-header'>
         Welcome to PairMe!
+
+        
+        </div>
 
         To get started, login here:
         <Login></Login>

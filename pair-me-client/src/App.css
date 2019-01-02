@@ -1,32 +1,246 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+/****************************************************************************************************/
+/*** BEGIN CSS RESET ***/
+/****************************************************************************************************/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/****************************************************************************************************/
+/*** END CSS RESET ***/
+/****************************************************************************************************/
+
+
+/****************************************************************************************************/
+/*** BEGIN BODY APP ***/
+/****************************************************************************************************/
 .App {
+  width: 100%;
+}
+
+.app-container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+/****************************************************************************************************/
+/*** END BODY APP ***/
+/****************************************************************************************************/
+
+
+/****************************************************************************************************/
+/*** BEGIN NAVIGATION ***/
+/****************************************************************************************************/
+
+.nav-container {
+  width: 100%;
+  padding: 20px 0px;
+  text-decoration: none;
+  background: #3d3d3d;
+}
+
+.nav-link {
+  padding: 10px;
+  text-decoration: none;
+  cursor: pointer;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+}
+
+.navigation {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+}
+
+.navigation a {
+  text-decoration: none;
+  color: white;
+  background: #3d3d3d;
+}
+
+/****************************************************************************************************/
+/*** END NAVIGATION ***/
+/****************************************************************************************************/
+
+/****************************************************************************************************/
+/*** BEGIN LOGIN ***/
+/****************************************************************************************************/
+
+.login-container form {
+  display: flex;
+  flex-flow: column nowrap;
+  max-width: 100%;
+  align-items: center;
+}
+
+
+.login-container form input {
+  width: 30%;
+  margin: 5px;
+  padding: 10px;
+  border: 1px solid gray;
+  border-radius: 10px;
+  outline: none;
+  font-size: 1rem;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.login-container form button {
+  padding: 10px;
+  width: 10%;
+  margin: 5px;
+  border: 1px solid gray;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+/****************************************************************************************************/
+/*** END LOGIN ***/
+/****************************************************************************************************/
+
+/****************************************************************************************************/
+/*** BEGIN WELCOME ***/
+/****************************************************************************************************/
+
+.welcome-container {
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+/****************************************************************************************************/
+/*** END WELCOME ***/
+/****************************************************************************************************/
