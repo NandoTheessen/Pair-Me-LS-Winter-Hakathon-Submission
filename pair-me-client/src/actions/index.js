@@ -11,6 +11,9 @@ export const LOGGED_OUT = 'LOGGED_OUT';
 export const LOGGED_IN = 'LOGGED_IN';
 export const LOGGING_IN = 'LOGGING_IN';
 
+// Register Dispatches
+export const REGISTER = 'REGISTER';
+
 export const testAPI = () => {
     const sendTest = axios.get(`https://localhost:8000/api/`);
 
@@ -49,5 +52,14 @@ export const login = (user) => {
         dispatch({type: LOGGED_IN});
 
         console.log('Logged In: ', user);
+    }
+}
+
+export const register = (user) => {
+    return dispatch => {
+        dispatch({type: REGISTER});
+
+
+        console.log('Registered: ', user);
     }
 }
