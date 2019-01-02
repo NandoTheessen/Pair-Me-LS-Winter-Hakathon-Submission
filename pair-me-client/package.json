@@ -28,6 +28,16 @@
       "pre-commit": "lint-staged"
     }
   },
+  "lint-staged": {
+    "linters": {
+      "*.{js}": [
+        "git add"
+      ]
+    },
+    "ignore": [
+      "**/dist/*.min.js"
+    ]
+  },
   "browserslist": [
     ">0.2%",
     "not dead",
