@@ -22,9 +22,11 @@ class Navigation extends React.Component{
         return(
             <div className = 'navigation'>
                 <NavLink to = '/'><span className = 'nav-link'>Home</span></NavLink>
-                <NavLink to = '/register'><span className = 'nav-link'>Register</span></NavLink>
-                <NavLink to = '/login'><span className = 'nav-link'>Login</span></NavLink>
+                <NavLink to = '/dashboard'><span className = 'nav-link'>Dashboard</span></NavLink>
+                {/* <NavLink to = '/register'><span className = 'nav-link'>Register</span></NavLink>
+                <NavLink to = '/login'><span className = 'nav-link'>Login</span></NavLink> */}
                 <NavLink to = '#'><span className = 'nav-link' onClick={this.handleLogout}>Logout</span></NavLink>
+
             </div>
         )
     }
