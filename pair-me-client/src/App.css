@@ -237,8 +237,29 @@ table {
 /*** BEGIN WELCOME ***/
 /****************************************************************************************************/
 
-.welcome-container {
+.welcome-banner {
+  width: 100%;
+  background:skyblue;
+  color: white;
   text-align: center;
+  padding: 20px 0px;
+}
+
+.welcome-banner h1{
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.welcome-banner h2{
+  font-size: 1.5rem;
+}
+
+.welcome-header {
+  margin: 10px 0px;
+}
+
+.welcome-content p{
+  margin: 5px 0px;
 }
 
 /****************************************************************************************************/
