@@ -1,11 +1,12 @@
-import React, { Component } from 'react'
-import './App.css'
-import { Switch, Route, Link, withRouter } from 'react-router-dom'
-import { connect } from 'react-redux'
-import { testAPI } from './actions/index'
-import Navigation from './components/Navigation'
-import Login from './components/Login'
-import Welcome from './components/Welcome'
+import React, { Component } from 'react';
+import './App.css';
+import { Switch, Route, withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { testAPI } from './actions/index';
+import Navigation from './components/Navigation';
+import Login from './components/Login';
+import Welcome from './components/Welcome';
+import Register from './components/Register';
 
 class App extends Component {
   render() {
@@ -17,12 +18,8 @@ class App extends Component {
         <div className="app-container">
           <Switch>
             <Route exact path="/" component={Welcome} />
-            <Route
-              exact
-              path="/login"
-              render={props => <Login {...props} isLogin={true} />}
-            />
-            <Route exact path="/register" component={Login} />
+            <Route exact path = '/login' component={Login} />
+            <Route exact path= '/register' component={Register} />
 
             {/* Routes go here */}
           </Switch>
