@@ -359,7 +359,8 @@ body {
   padding: 10px;
   width: 50%;
   margin: 5px;
-  border: 1px solid gray;
+  border: none;
+  cursor: pointer;
   border-radius: 10px;
   font-size: 1rem;
   font-family: 'Montserrat';
@@ -373,4 +374,48 @@ body {
 
 /****************************************************************************************************/
 /*** END REGISTER ***/
+/****************************************************************************************************/
+
+/****************************************************************************************************/
+/*** BEGIN DASHBOARD ***/
+/****************************************************************************************************/
+.beacon-container {
+  width: 100%;
+  border: 1px solid black;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  height: 25vh;
+}
+
+.dashboard-banner h1{
+  font-family: 'Lobster';
+  color: white;
+  font-size: 3rem;
+  text-align: center;
+  margin: 20px 0px;
+  text-shadow: 2px 2px black;
+}
+
+.ask-beacons {
+  text-align: center;
+  width: 45%;
+  border: 2px solid gray;
+}
+
+.offer-beacons {
+  text-align: center;
+  border: 2px solid gray;
+  width: 45%;
+}
+
+.active-meetings {
+  width: 100%;
+  border: 2px solid gray;
+  height: 30vh;
+  margin: 20px 0px;
+}
+
+/****************************************************************************************************/
+/*** END DASHBOARD ***/
 /****************************************************************************************************/
