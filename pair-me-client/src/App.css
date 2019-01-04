@@ -434,3 +434,7 @@ body {
 .welcome-right {
   min-width: 170px;
 }
+
+.robot {
+  width: 100%;
+}
