@@ -3,7 +3,6 @@ import './App.css'
 import { Switch, Route, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 import axios from 'axios'
-import Navigation from './components/Navigation'
 import Welcome from './components/Welcome'
 import Dashboard from './components/Dashboard'
 // Temporary dummy image files
@@ -30,12 +29,15 @@ class App extends Component {
         })
         .catch(e => console.log(e))
     } else if (access_token) {
-      axios.post(`https://evening-refuge-39471.herokuapp.com/api/users/login`, {
-        access_token
-      }).then(res => {
-        this.props.storeLocally(res.data)
-        this.props.history.push('/dashboard')
-      }).catch(e => console.log(e))
+      axios
+        .post(`https://evening-refuge-39471.herokuapp.com/api/users/login`, {
+          access_token
+        })
+        .then(res => {
+          this.props.storeLocally(res.data)
+          this.props.history.push('/dashboard')
+        })
+        .catch(e => console.log(e))
     }
   }
 
