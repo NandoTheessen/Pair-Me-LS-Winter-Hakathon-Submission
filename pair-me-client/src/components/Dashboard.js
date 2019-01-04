@@ -69,13 +69,14 @@ class Dashboard extends React.Component {
 }
 
 const mapStateToProps = state => {
+  console.log('state, you lift bro?', state)
   return {
     isLoggedIn: state.isLoggedIn,
     email: state.email,
     access_token: state.access_token,
     name: state.name,
-    teachers: state.teachers,
-    students: state.students,
+    teacher: state.teacher,
+    student: state.student,
     username: state.username,
     avatar: state.avatar
   }
