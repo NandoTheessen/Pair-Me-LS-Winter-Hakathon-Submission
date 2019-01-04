@@ -1,10 +1,13 @@
 import React from 'react'
 import { withRouter } from 'react-router-dom'
+<<<<<<< HEAD
 import Login from './Login'
 
 
 
 import Register from './Register'
+=======
+>>>>>>> 248ff972536c2f6e6d69f8bd42a25cfaa7a42ecf
 
 class Welcome extends React.Component {
   constructor(props) {
@@ -14,37 +17,7 @@ class Welcome extends React.Component {
     }
   }
 
-  toggleForm = event => {
-    event.preventDefault()
-    let bool = this.state.loginRender
-    this.setState({
-      loginRender: !bool
-    })
-  }
-
   render() {
-    const loginRender = this.state.loginRender
-    let formType
-    if (!loginRender) {
-      formType = <Register />
-    } else {
-      formType = <Login />
-    }
-
-    let formSelect
-    if (!loginRender) {
-      formSelect = (
-        <div className="form-toggle">
-          Have an account? Login <span onClick={this.toggleForm}>here!</span>
-        </div>
-      )
-    } else {
-      formSelect = (
-        <div className="form-toggle">
-          Need an account? Register <span onClick={this.toggleForm}>here!</span>
-        </div>
-      )
-    }
     return (
       <div className="welcome-container">
         <div className="welcome-banner">
@@ -135,8 +108,19 @@ class Welcome extends React.Component {
 
           <div className="welcome-right">
             {/* Renders the login or registration form depending on user selection */}
-            {formType}
-            {formSelect}
+            <div className="slack-login">
+              <a
+                rel="noopeneder noreferrer"
+                // eslint-disable-next-line
+                href="https://slack.com/oauth/authorize?client_id=154966377728.516246535895&scope=identity.basic"
+              >
+                <img
+                  className="slack-button"
+                  src="https://api.slack.com/img/sign_in_with_slack.png"
+                  alt="slack logo"
+                />
+              </a>
+            </div>
           </div>
         </div>
       </div>
