@@ -15,20 +15,25 @@ class Dashboard extends React.Component {
     return (
       <div className="dashboard-container">
         <div className="dashboard-banner">
-          <h1>Dashboard</h1>
+          <h1 className="title">Dashboard</h1>
         </div>
 
         <div className="beacon-container">
-          <div className="ask-beacons">
-            <div>[ASK BEACONS]</div>
-          </div>
-          <div className="offer-beacons">
-            <div className="offer-beacons">[OFFER BEACONS]</div>
+          <div className="ask-beacons">[TOPICS ON OFFER]</div>
+          <div className="badges-container">
+            <div className="badges-header">YOUR BADGES</div>
+            <div className="badges-text">Here are the badges you earned!</div>
+            {this.props.badges.map(badge => (
+              <div className="badge-container" key={badge.id}>
+                <img className="badge" src={badge.imageUrl} alt={badge.name} />
+                <p className="badge-description">{badge.description}</p>
+              </div>
+            ))}
+            <div />
           </div>
         </div>
-        <div className="active-meetings">
-          <div>[ACTIVE MEETINGS]</div>
-        </div>
+
+        <div className="active-meetings">[ACTIVE MEETINGS]</div>
       </div>
     )
   }

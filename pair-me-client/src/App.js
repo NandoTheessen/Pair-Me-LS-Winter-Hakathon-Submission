@@ -6,6 +6,11 @@ import axios from 'axios'
 import Navigation from './components/Navigation'
 import Welcome from './components/Welcome'
 import Dashboard from './components/Dashboard'
+// Temporary dummy image files
+import certificate_solid from './assets/certificate_solid.svg'
+import ribbon_solid from './assets/ribbon_solid.svg'
+import react_badge from './assets/react_badge.svg'
+import js_square from './assets/js_square.svg'
 
 class App extends Component {
   componentDidMount() {
@@ -23,7 +28,44 @@ class App extends Component {
         .catch(e => console.log(e))
     }
   }
+
   render() {
+    const badges = [
+      {
+        id: 0,
+        imageUrl: certificate_solid,
+        name: 'consecutive_5',
+        description:
+          'Great job logging in 5 days in a row! You are super duper!'
+      },
+      {
+        id: 1,
+        imageUrl: ribbon_solid,
+        name: 'good_sherpa_5',
+        description:
+          'Wow, you helped 5 people! You have a heart of gold. Thanks for being you.'
+      },
+      {
+        id: 2,
+        imageUrl: react_badge,
+        name: 'helper_react_2',
+        description:
+          'React is hard. Very hard. You made it easier for two others. Go you.'
+      },
+      {
+        id: 3,
+        imageUrl: js_square,
+        name: 'helper_js_2',
+        description:
+          'Javascript is confusing. You made it less confusing for two others. We commend your service.'
+      }
+    ]
+    /*
+      `good_sherpa_5`,
+      `consecutive_5`,
+      `helper_react_2`,
+      `helper_js_2`
+    */
     return (
       <div className="App">
         <div className="nav-container">
@@ -32,7 +74,11 @@ class App extends Component {
         <div className="app-container">
           <Switch>
             <Route exact path="/" component={Welcome} />
-            <Route exact path="/dashboard" component={Dashboard} />
+            <Route
+              exact
+              path="/dashboard"
+              render={props => <Dashboard badges={badges} {...props} />}
+            />
             {/* Routes go here */}
           </Switch>
         </div>
