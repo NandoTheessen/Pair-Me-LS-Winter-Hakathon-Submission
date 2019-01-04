@@ -5,13 +5,6 @@ import slackbot from '../slackbot.png'
 import slackMessage from '../slackMessage.png'
 
 class Welcome extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      loginRender: false
-    }
-  }
-
   render() {
     return (
       <div className="welcome-container">
@@ -30,8 +23,8 @@ class Welcome extends React.Component {
               <h3>Welcome to PairMe! </h3>
 
               <h4>
-                We're building a better way for students to find and receive
-                help.
+                We're building a tool to make it super easy for you to find and
+                receive help.
               </h4>
             </div>
             <div className="welcome-content">
@@ -43,12 +36,11 @@ class Welcome extends React.Component {
                 to find the help you need, when you need it.
               </p>
               <p>
-                Our mission is to provide a visual dashboard that allows
-                students to request and offer help on challenges that arise in
-                the curriculum, as well as seek guidance on individual projects.
-                Through the usage of signaling “beacons”, we can automatically
-                pair those seeking guidance with those offering assistance. The
-                process is simple:
+                Our mission is to provide you with an easy way to request and
+                offer help on challenges that arise in the curriculum, as well
+                as seek guidance on individual projects. Through the PairMe bot,
+                we automatically pair you with someone who's either able to help
+                you or is looking for your help! The process is simple:
               </p>
               <p>
                 Say you’re being introduced to React for the first time. You’ve
@@ -61,13 +53,16 @@ class Welcome extends React.Component {
               <p>
                 Another student finished learning React a few weeks ago, and
                 loves to bring other fledgling developers into the light of
-                component-based architecture. They start a DM with the PairMe
-                Slackbot - `assist React` - and are put into a queue awaiting
-                those in need of help.
+                component-based architecture. Now instead of trying to find
+                someone proficient enough or writing long winded messages to the
+                #React channel, all you have to do is send us a DM! The PairMe
+                bot accepts commands in the `help react` or `assist react`
+                format. You are put into a queue and paired up with someone who
+                typed the opposite command.
               </p>
               <p>
                 Once you DM the PairMe bot with `help React`, the bot will
-                recognize that there are two people that can be matched for a
+                recognize when there are two people that can be matched for a
                 topic and informs you and the person who volunteered to help you
                 navigate the waters of React that a match has been made. This
                 takes a lot of the guesswork out of trouble-shooting inqueries
@@ -84,10 +79,10 @@ class Welcome extends React.Component {
               <p>
                 We automate the process of finding face-to-face code instruction
                 so that your calls for help don’t get lost in the Slack
-                stampede. And as for helpers, no good deed goes unrewarded!
-                We’ll keep track of how many debug dragons you’ve slain, so you
-                can show off to all the other devs your skills in collaborative
-                problem solving.
+                stampede. And as for helpers, no good deed goes unrewarded! Rack
+                up points to keep track of how many debug dragons you’ve slain,
+                so you can show off to all the other devs your skills in
+                collaborative problem solving.
               </p>
               <p>
                 Coding is fun. It’s challenging. Sometimes, it’s really hard,
