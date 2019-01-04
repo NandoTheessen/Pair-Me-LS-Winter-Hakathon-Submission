@@ -1,6 +1,7 @@
-import React, { Component } from 'react'
+
+import React from 'react'
 import '../App.css'
-import { Switch, Route, withRouter } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 
 class Dashboard extends React.Component {
@@ -19,6 +20,7 @@ class Dashboard extends React.Component {
         </div>
 
         <div className="beacon-container">
+
           <div className="ask-beacons">[TOPICS ON OFFER]</div>
           <div className="badges-container">
             <div className="badges-header">YOUR BADGES</div>
@@ -34,6 +36,7 @@ class Dashboard extends React.Component {
         </div>
 
         <div className="active-meetings">[ACTIVE MEETINGS]</div>
+
       </div>
     )
   }

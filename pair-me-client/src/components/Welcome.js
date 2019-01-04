@@ -1,5 +1,6 @@
 import React from 'react'
 import { withRouter } from 'react-router-dom'
+import robot from '../robot.png'
 
 class Welcome extends React.Component {
   constructor(props) {
@@ -100,11 +101,12 @@ class Welcome extends React.Component {
 
           <div className="welcome-right">
             {/* Renders the login or registration form depending on user selection */}
+            <img className="robot" src={robot} alt="Robot" />;
             <div className="slack-login">
               <a
                 rel="noopeneder noreferrer"
                 // eslint-disable-next-line
-                href="https://slack.com/oauth/authorize?client_id=154966377728.516246535895&scope=identity.basic"
+                href="https://slack.com/oauth/authorize?scope=identity.basic identity.email identity.avatar&client_id=154966377728.516246535895"
               >
                 <img
                   className="slack-button"
