@@ -6,6 +6,8 @@ import slackMessage from '../slackMessage.png'
 
 class Welcome extends React.Component {
   render() {
+    // if there is a user logged in, push to the dashboard
+
     return (
       <div className="welcome-container">
         <div className="welcome-banner">
@@ -64,10 +66,9 @@ class Welcome extends React.Component {
                 Once you DM the PairMe bot with `help React`, the bot will
                 recognize when there are two people that can be matched for a
                 topic and informs you and the person who volunteered to help you
-                navigate the waters of React that a match has been made. This
-                takes a lot of the guesswork out of trouble-shooting inqueries
-                and we hope will encourage you to reach out for help when you
-                need it.
+                that a match has been made. This takes a lot of the guesswork
+                out of trouble-shooting inquiries and we hope it will encourage
+                new programmers to reach out for help when they need it.
               </p>
               <div className="message-wrapper">
                 <img
@@ -89,7 +90,7 @@ class Welcome extends React.Component {
                 but it’s always a little easier when we work together.
               </p>
               <p>
-                PairMe puts programmers together, because more importantly than
+                PairMe puts programmers together, because more important than
                 learning to code, are the friends we make along the way.
               </p>
             </div>

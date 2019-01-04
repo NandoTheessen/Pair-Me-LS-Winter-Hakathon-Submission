@@ -410,7 +410,7 @@ body {
   border-bottom: none;
   border-radius: 10px 10px 0px 0px;
   background: #8e7bf7;
-  padding: 20px;
+  padding: 20px 0px;
 }
 
 .toolbar-link {
@@ -418,6 +418,19 @@ body {
   align-items: center;
   color: white;
   cursor: pointer;
+  text-align: center;
+  padding: 0px 10px;
+  font-family: 'Montserrat';
+}
+
+.avatar-container {
+  text-align: center;
+  font-family: 'Montserrat';
+}
+
+.avatar-container p {
+  color: white;
+  padding-top: 5px;
 }
 
 .avatar {
@@ -460,7 +473,8 @@ body {
   background: #f7c17b;
   border-left: 1px solid white;
   border-right: 1px solid black;
-  min-height: 30vh
+  min-height: 30vh;
+  padding: 20px;
 }
 
 .ask-beacons h1 {
@@ -476,17 +490,48 @@ body {
   min-height: 20vh;
   border: 1px solid white;
   border-top: none;
-  border-radius: 0px 0px 10px 10px;
+  border-bottom: none;
   background: #8e7bf7;
+  padding: 20px;
 }
 
-.badges-container {
+
+.active-meetings h1{
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  font-size: 1.5rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+
+.offer-beacons {
+
   text-align: center;
   border-right: 0.5px solid white;
   border-left: 0.5px solid black;
   width: 50%;
   background: #7bf79e;
   min-height: 30vh;
+  padding: 20px;
+}
+
+.offer-beacons h1 {
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+
+
+.badges-container {
+  text-align: center;
+  width: 100%;
+  background: #7bf79e;
+  border: 1px solid white;
+  min-height: 30vh;
+  border-top: none;
 }
 
 .badges-header {

@@ -3,7 +3,6 @@ import './App.css'
 import { Switch, Route, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 import axios from 'axios'
-import Navigation from './components/Navigation'
 import Welcome from './components/Welcome'
 import Dashboard from './components/Dashboard'
 // Temporary dummy image files
@@ -11,11 +10,12 @@ import certificate_solid from './assets/certificate_solid.svg'
 import ribbon_solid from './assets/ribbon_solid.svg'
 import react_badge from './assets/react_badge.svg'
 import js_square from './assets/js_square.svg'
-import {storeLocally} from './actions/index'
+import { storeLocally } from './actions/index'
 
 class App extends Component {
   componentDidMount() {
     const { search } = this.props.location
+    const access_token = localStorage.getItem('access_token')
     if (search) {
       const token = search.slice(6, -7)
       axios
@@ -25,21 +25,27 @@ class App extends Component {
         .then(res => {
           // do redux stuff here
           this.props.storeLocally(res.data)
-          console.log(res.data)
-          console.log(res.data.data)
-          // this is our schema: res.data.data.whatever
-          console.log(res.data.data.access_token)
-          console.log(res.data.user.name)
+          this.props.history.push('/dashboard')
+        })
+        .catch(e => console.log(e))
+    } else if (access_token) {
+      axios
+        .post(`https://evening-refuge-39471.herokuapp.com/api/users/login`, {
+          access_token
+        })
+        .then(res => {
+          this.props.storeLocally(res.data)
+          this.props.history.push('/dashboard')
         })
         .catch(e => console.log(e))
     }
   }
 
-  componentWillReceiveProps(newProps){
-    if(newProps.queues_stored){
-      this.props.history.push('/dashboard')
-    }
-  }
+  // componentWillReceiveProps(newProps){
+  //   if(newProps.queues_stored){
+  //     this.props.history.push('/dashboard')
+  //   }
+  // }
 
   render() {
     const badges = [
@@ -80,17 +86,16 @@ class App extends Component {
     */
     return (
       <div className="App">
-        
         <div className="app-container">
           <Switch>
-            <Route exact path = "/" component={Welcome} />
-            <Route exact path = '/' component={Dashboard} />
-            
-            {/* <Route
+            <Route exact path="/" component={Welcome} />
+            {/* <Route exact path = '/dashboard' component={Dashboard} /> */}
+
+            <Route
               exact
               path="/dashboard"
               render={props => <Dashboard badges={badges} {...props} />}
-            /> */}
+            />
             {/* Routes go here */}
           </Switch>
         </div>
@@ -104,10 +109,15 @@ const mapStateToProps = state => {
     // state goes here
     isLoggedIn: state.isLoggedIn,
     username: state.username,
-    queues_stored: state.queues_stored,
+    queues_stored: state.queues_stored
   }
 }
 
-export default withRouter(connect(mapStateToProps, {
-  storeLocally,
-})(App))
+export default withRouter(
+  connect(
+    mapStateToProps,
+    {
+      storeLocally
+    }
+  )(App)
+)
