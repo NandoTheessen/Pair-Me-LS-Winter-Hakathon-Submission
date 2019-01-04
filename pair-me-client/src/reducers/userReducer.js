@@ -39,8 +39,10 @@ export const userReducer = (state = initialState, action) => {
         ...state,
         isLoggedIn: true,
         storing_queues: false,
+
         teacher: action.payload.teacher,
         student: action.payload.student,
+
         username: action.payload.username,
         avatar: action.payload.avatar,
         email: action.payload.email,
