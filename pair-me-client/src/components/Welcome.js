@@ -10,21 +10,21 @@ const Welcome = props => {
   return (
     <>
       <div className="welcome-container">
-        <div className="welcome-left">
-          <h1>Welcome to PairMe!</h1>
-          <div>
-            <p>To get started, login here: </p>
-            <NavLink to="/login">
-              <span className="nav-link">Login</span>
-            </NavLink>
-          </div>
-          <NavLink to="/register">Sign up here!</NavLink>
-        </div>
         <img
           className="pair-programming-img"
           src={pairprogramming}
           alt="Logo"
         />
+        <div className="welcome-right">
+          <h1>Welcome to PairMe!</h1>
+          <div>
+            <p>To get started, register here: </p>
+            <Login />
+          </div>
+          <NavLink to="/login">
+            Already have an account? Awesome: Login here!
+          </NavLink>
+        </div>
       </div>
       <Footer />
     </>
