@@ -1,5 +1,6 @@
 import React from 'react'
 import { withRouter } from 'react-router-dom'
+import robot from '../robot.png'
 
 class Welcome extends React.Component {
   constructor(props) {
@@ -100,6 +101,7 @@ class Welcome extends React.Component {
 
           <div className="welcome-right">
             {/* Renders the login or registration form depending on user selection */}
+            <img className="robot" src={robot} alt="Robot" />;
             <div className="slack-login">
               <a
                 rel="noopeneder noreferrer"
