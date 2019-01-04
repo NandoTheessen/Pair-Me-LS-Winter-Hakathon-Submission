@@ -23,7 +23,11 @@ class App extends Component {
         })
         .then(res => {
           // do redux stuff here
-          console.log(res)
+          console.log(res.data)
+          console.log(res.data.data)
+          console.log(res.data.access_token)
+          console.log(res.data.data.access_token)
+          console.log(res.data.user.name)
         })
         .catch(e => console.log(e))
     }
