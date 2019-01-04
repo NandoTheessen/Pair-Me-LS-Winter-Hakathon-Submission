@@ -143,7 +143,7 @@ table {
 /****************************************************************************************************/
 
 :root {
-  --background-blue: #7bd3f7;
+  --background-bg: #7bd3f7;
 }
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat|Oswald|Lobster|Lato');
@@ -152,7 +152,7 @@ table {
 /*** BEGIN BODY APP ***/
 /****************************************************************************************************/
 body {
-  background: var(--background-blue);
+  background: var(--background-bg);
 }
 
 .App {
