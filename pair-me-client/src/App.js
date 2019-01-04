@@ -30,6 +30,7 @@ class App extends Component {
   }
 
   render() {
+    console.log(this.props)
     const badges = [
       {
         id: 0,
