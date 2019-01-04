@@ -36,7 +36,7 @@ class App extends Component {
   }
 
   componentWillReceiveProps(newProps){
-    if(newProps.queues_stored !== this.props.queues_stored){
+    if(newProps.queues_stored){
       this.props.history.push('/dashboard')
     }
   }
