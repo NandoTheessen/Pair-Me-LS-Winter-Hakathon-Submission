@@ -3,8 +3,29 @@ import '../App.css'
 import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux';
 import {logout} from '../actions/index';
+import axios from 'axios';
 
 class Dashboard extends React.Component {
+  componentDidMount() {
+    const { search } = this.props.location
+    if (search) {
+      const token = search.slice(6, -7)
+      axios
+        .post(`https://evening-refuge-39471.herokuapp.com/api/users/login`, {
+          token
+        })
+        .then(res => {
+          // do redux stuff here
+          this.props.storeLocally(res.data)
+          console.log(res.data)
+          console.log(res.data.data)
+          // this is our schema: res.data.data.whatever
+          console.log(res.data.data.access_token)
+          console.log(res.data.user.name)
+        })
+        .catch(e => console.log(e))
+    }
+  }
   constructor(props) {
     super(props)
     this.state = {
@@ -36,23 +57,28 @@ class Dashboard extends React.Component {
         <div className="beacon-container">
           <div className="ask-beacons">
           <h1>Awaiting Assistance</h1>
+          {this.props.students}
           </div>
-          <div className="badges-container">
+          <div className = 'offer-beacons'>
+          <h1>Offering Assistance</h1>
+          {this.props.teachers}
+          </div>
+          
+          </div>
+
+        <div className="active-meetings"><h1>Active Meetings</h1></div>
+        <div className="badges-container">
             <div className="badges-header">YOUR BADGES</div>
             <div className="badges-text">Here are the badges you earned!</div>
 
 
-            {/* {this.props.badges.map(badge => (
+            {this.props.badges.map(badge => (
               <div className="badge-container" key={badge.id}>
                 <img className="badge" src={badge.imageUrl} alt={badge.name} />
                 <p className="badge-description">{badge.description}</p>
               </div>
-            ))} */}
-            <div />
-          </div>
-        </div>
-
-        <div className="active-meetings">[ACTIVE MEETINGS]</div>
+            ))}
+            </div>
       </div>
     )
   }

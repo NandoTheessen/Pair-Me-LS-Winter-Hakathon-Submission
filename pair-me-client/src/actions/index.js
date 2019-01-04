@@ -40,10 +40,9 @@ export const storeLocally = (data) => {
     localStorage.setItem('token', data.data.access_token);
     console.log(data.data.access_token);
     if(data.s_queue && data.t_queue){
-      dispatch({type: QUEUES_STORED, payload: {student: data.s_queue, teacher: data.t_queue, username: data.data.username}})
+      dispatch({type: QUEUES_STORED, payload: {student: data.s_queue, teacher: data.t_queue, username: data.data.user.name}})
     } else {
       dispatch({type: ERROR})
     }
-
   }
 }
