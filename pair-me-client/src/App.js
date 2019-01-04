@@ -11,11 +11,12 @@ import certificate_solid from './assets/certificate_solid.svg'
 import ribbon_solid from './assets/ribbon_solid.svg'
 import react_badge from './assets/react_badge.svg'
 import js_square from './assets/js_square.svg'
-import {storeLocally} from './actions/index'
+import { storeLocally } from './actions/index'
 
 class App extends Component {
   componentDidMount() {
     const { search } = this.props.location
+    const access_token = localStorage.getItem('access_token')
     if (search) {
       const token = search.slice(6, -7)
       axios
@@ -25,13 +26,11 @@ class App extends Component {
         .then(res => {
           // do redux stuff here
           this.props.storeLocally(res.data)
-          console.log(res.data)
-          console.log(res.data.data)
-          // this is our schema: res.data.data.whatever
-          console.log(res.data.data.access_token)
-          console.log(res.data.user.name)
+          this.props.history.push('/dashboard')
         })
         .catch(e => console.log(e))
+    } else if (access_token) {
+      axios.post()
     }
   }
 
@@ -80,12 +79,11 @@ class App extends Component {
     */
     return (
       <div className="App">
-        
         <div className="app-container">
           <Switch>
-            <Route exact path = "/" component={Welcome} />
+            <Route exact path="/" component={Welcome} />
             {/* <Route exact path = '/dashboard' component={Dashboard} /> */}
-            
+
             <Route
               exact
               path="/dashboard"
@@ -104,10 +102,15 @@ const mapStateToProps = state => {
     // state goes here
     isLoggedIn: state.isLoggedIn,
     username: state.username,
-    queues_stored: state.queues_stored,
+    queues_stored: state.queues_stored
   }
 }
 
-export default withRouter(connect(mapStateToProps, {
-  storeLocally,
-})(App))
+export default withRouter(
+  connect(
+    mapStateToProps,
+    {
+      storeLocally
+    }
+  )(App)
+)

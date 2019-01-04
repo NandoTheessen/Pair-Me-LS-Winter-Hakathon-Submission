@@ -7,9 +7,7 @@ import slackMessage from '../slackMessage.png'
 class Welcome extends React.Component {
   render() {
     // if there is a user logged in, push to the dashboard
-    if(localStorage.getItem('username')){
-      this.props.history.push('/dashboard')
-    }
+
     return (
       <div className="welcome-container">
         <div className="welcome-banner">
@@ -68,10 +66,9 @@ class Welcome extends React.Component {
                 Once you DM the PairMe bot with `help React`, the bot will
                 recognize when there are two people that can be matched for a
                 topic and informs you and the person who volunteered to help you
-                that a match has been made. This
-                takes a lot of the guesswork out of trouble-shooting inquiries
-                and we hope it will encourage new programmers to reach out for help when they
-                need it.
+                that a match has been made. This takes a lot of the guesswork
+                out of trouble-shooting inquiries and we hope it will encourage
+                new programmers to reach out for help when they need it.
               </p>
               <div className="message-wrapper">
                 <img
@@ -123,5 +120,4 @@ class Welcome extends React.Component {
     )
   }
 }
-export default withRouter(Welcome);
-
+export default withRouter(Welcome)
