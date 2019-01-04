@@ -20,7 +20,7 @@ export const logout = () => {
   return dispatch => {
     localStorage.removeItem('username');
     localStorage.removeItem('token');
-    console.log('LOGGED OUT')
+    console.log('LOGGED OUT');
     dispatch({ type: LOGGED_OUT })
   }
 }
@@ -39,8 +39,9 @@ export const storeLocally = (data) => {
     localStorage.setItem('username', data.data.user.name);
     localStorage.setItem('token', data.data.access_token);
     console.log(data.data.access_token);
-    if(data.s_queue && data.t_queue){
-      dispatch({type: QUEUES_STORED, payload: {student: data.s_queue, teacher: data.t_queue, username: data.data.user.name}})
+    if(data.s_queue || data.t_queue){
+      dispatch({type: QUEUES_STORED, payload: {student: data.s_queue, teacher: data.t_queue, username: data.data.user.name, avatar: data.data.image_192, email: data.data.email, id: data.data.id}})
+      console.log('test for js', data.t_queue.js)
     } else {
       dispatch({type: ERROR})
     }

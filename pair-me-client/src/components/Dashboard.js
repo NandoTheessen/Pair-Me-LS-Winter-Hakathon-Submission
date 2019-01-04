@@ -18,27 +18,27 @@ class Dashboard extends React.Component {
           // do redux stuff here
           this.props.storeLocally(res.data)
           console.log(res.data)
-          console.log(res.data.data)
-          // this is our schema: res.data.data.whatever
-          console.log(res.data.data.access_token)
-          console.log(res.data.user.name)
         })
         .catch(e => console.log(e))
     }
+
   }
   constructor(props) {
     super(props)
     this.state = {
-      hasBeacon: false
+      hasBeacon: false,
     }
   }
 
+  handleLogout = event => {
+    event.preventDefault();
+    this.props.logout();
+    this.props.history.push('/')
+  }
+
   render() {
-    console.log(this.state)
-    console.log(this.props)
-    console.log(this.props.students)
-    console.log('teachers', this.props.teachers)
-    
+    console.log(this.props);
+    let username = localStorage.getItem('username')
     return (
       <div className="dashboard-container">
         <div className="dashboard-banner">
@@ -47,12 +47,9 @@ class Dashboard extends React.Component {
 
       <div className = 'toolbar'>
       <div className = 'toolbar-link'>Profile</div>
-      <div className = 'avatar'></div>
-      <div className = 'toolbar-link'>Badges</div>
-      {/* <div className = 'toolbar-nav'>
-      <div>Profile</div>
-      <div>Badges</div>
-      </div> */}
+      <div className = 'avatar-container'><div className = 'avatar'><img src = {this.props.avatar}></img></div><p>{username}</p></div>
+      <div className = 'toolbar-link' onClick = {this.handleLogout}>Logout</div>
+
       </div>
         <div className="beacon-container">
           <div className="ask-beacons">
@@ -92,6 +89,8 @@ const mapStateToProps = state => {
     name: state.name,
     teachers: state.teachers,
     students: state.students,
+    username: state.username,
+    avatar: state.avatar,
   }
 }
 
