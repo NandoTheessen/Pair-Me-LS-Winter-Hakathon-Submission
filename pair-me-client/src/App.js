@@ -3,6 +3,7 @@ import './App.css'
 import { Switch, Route, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { testAPI } from './actions/index'
+import axios from 'axios'
 import Navigation from './components/Navigation'
 import Login from './components/Login'
 import Welcome from './components/Welcome'
@@ -11,7 +12,16 @@ import Dashboard from './components/Dashboard'
 
 class App extends Component {
   componentDidMount() {
-    console.log(this.props)
+    const { search } = this.props.location
+    if (search) {
+      const token = search.slice(0, -7)
+      axios
+        .post(`/api/slack/login`, { token })
+        .then(res => {
+          // do redux stuff here
+        })
+        .catch(e => console.log(e))
+    }
   }
   render() {
     return (
