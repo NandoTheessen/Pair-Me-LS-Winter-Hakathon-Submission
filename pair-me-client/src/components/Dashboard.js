@@ -1,7 +1,8 @@
 import React from 'react'
 import '../App.css'
 import { withRouter } from 'react-router-dom'
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
+import {logout} from '../actions/index';
 
 class Dashboard extends React.Component {
   constructor(props) {
@@ -13,6 +14,10 @@ class Dashboard extends React.Component {
 
   render() {
     console.log(this.state)
+    console.log(this.props)
+    console.log(this.props.students)
+    console.log('teachers', this.props.teachers)
+    
     return (
       <div className="dashboard-container">
         <div className="dashboard-banner">
@@ -35,12 +40,14 @@ class Dashboard extends React.Component {
           <div className="badges-container">
             <div className="badges-header">YOUR BADGES</div>
             <div className="badges-text">Here are the badges you earned!</div>
-            {this.props.badges.map(badge => (
+
+
+            {/* {this.props.badges.map(badge => (
               <div className="badge-container" key={badge.id}>
                 <img className="badge" src={badge.imageUrl} alt={badge.name} />
                 <p className="badge-description">{badge.description}</p>
               </div>
-            ))}
+            ))} */}
             <div />
           </div>
         </div>
@@ -57,6 +64,8 @@ const mapStateToProps = state => {
     email: state.email,
     access_token: state.access_token,
     name: state.name,
+    teachers: state.teachers,
+    students: state.students,
   }
 }
 
@@ -65,6 +74,8 @@ export default withRouter(
     mapStateToProps,
     {
       // actions go here
+      logout,
+
     }
   )(Dashboard)
 )

@@ -11,6 +11,7 @@ import certificate_solid from './assets/certificate_solid.svg'
 import ribbon_solid from './assets/ribbon_solid.svg'
 import react_badge from './assets/react_badge.svg'
 import js_square from './assets/js_square.svg'
+import {storeLocally} from './actions/index'
 
 class App extends Component {
   componentDidMount() {
@@ -23,9 +24,10 @@ class App extends Component {
         })
         .then(res => {
           // do redux stuff here
+          this.props.storeLocally(res.data)
           console.log(res.data)
           console.log(res.data.data)
-          console.log(res.data.access_token)
+          // this is our schema: res.data.data.whatever
           console.log(res.data.data.access_token)
           console.log(res.data.user.name)
         })
@@ -33,8 +35,13 @@ class App extends Component {
     }
   }
 
+  componentWillReceiveProps(newProps){
+    if(newProps.queues_stored){
+      this.props.history.push('/dashboard')
+    }
+  }
+
   render() {
-    console.log(this.props)
     const badges = [
       {
         id: 0,
@@ -76,12 +83,14 @@ class App extends Component {
         
         <div className="app-container">
           <Switch>
-            <Route exact path="/" component={Welcome} />
-            <Route
+            <Route exact path = "/" component={Welcome} />
+            <Route exact path = '/' component={Dashboard} />
+            
+            {/* <Route
               exact
               path="/dashboard"
               render={props => <Dashboard badges={badges} {...props} />}
-            />
+            /> */}
             {/* Routes go here */}
           </Switch>
         </div>
@@ -93,8 +102,12 @@ class App extends Component {
 const mapStateToProps = state => {
   return {
     // state goes here
-    isLoggedIn: state.isLoggedIn
+    isLoggedIn: state.isLoggedIn,
+    username: state.username,
+    queues_stored: state.queues_stored,
   }
 }
 
-export default withRouter(connect(mapStateToProps)(App))
+export default withRouter(connect(mapStateToProps, {
+  storeLocally,
+})(App))
