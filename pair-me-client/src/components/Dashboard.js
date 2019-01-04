@@ -26,18 +26,13 @@ class Dashboard extends React.Component {
           <h1 className="title">Dashboard</h1>
         </div>
 
-        <div className="toolbar">
-          <div className="toolbar-link">Profile</div>
-          <div className="avatar-container">
-            <div className="avatar">
-              <img src={this.props.avatar} alt="user avatar" />
-            </div>
-            <p>{this.props.username}</p>
-          </div>
-          <div className="toolbar-link" onClick={this.handleLogout}>
-            Logout
-          </div>
-        </div>
+      <div className = 'toolbar'>
+      <div className = 'toolbar-link'>Profile</div>
+      <div className = 'avatar-container'><div className = 'avatar' style = {{backgroundImage: `url(${this.props.avatar})`}}></div><p>{this.props.username}</p></div>
+      <div className = 'toolbar-link' onClick = {this.handleLogout}>Logout</div>
+
+      </div>
+
         <div className="beacon-container">
           <div className="ask-beacons">
             <h1>Awaiting Assistance</h1>
@@ -76,8 +71,10 @@ const mapStateToProps = state => {
     email: userReducer.email,
     access_token: userReducer.access_token,
     name: userReducer.name,
-    teacher: userReducer.teachers,
-    student: userReducer.students,
+
+    teacher: userReducer.teacher,
+    student: userReducer.student,
+
     username: userReducer.username,
     avatar: userReducer.avatar
   }
