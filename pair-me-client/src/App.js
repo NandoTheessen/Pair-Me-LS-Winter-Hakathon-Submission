@@ -20,7 +20,7 @@ class App extends Component {
         .then(res => {
           // do redux stuff here
           console.log(res)
-          this.props.login(res.data)
+          this.props.login(res.data.data)
           this.props.history.push('/dashboard')
         })
         .catch(e => console.log(e))

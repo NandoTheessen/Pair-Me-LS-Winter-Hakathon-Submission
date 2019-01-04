@@ -4,6 +4,14 @@ const initialState = {
   email: null,
   access_token: null,
   name: null,
+  id: null,
+  image_24: null,
+  image_32: null,
+  image_48: null,
+  image_72: null,
+  image_192: null,
+  image_512: null,
+  image_1024: null,
   isLoggedIn: false,
   error: null
 }

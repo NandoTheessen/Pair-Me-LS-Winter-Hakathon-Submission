@@ -43,10 +43,10 @@ export const logout = () => {
   }
 }
 
-export const login = ({ email, access_token, name }) => {
+export const login = ({ access_token, user }) => {
   localStorage.setItem('access_token', access_token)
   return dispatch => {
     localStorage.setItem('access_token', access_token)
-    dispatch({ type: LOGGED_IN, payload: { email, access_token, name } })
+    dispatch({ type: LOGGED_IN, payload: { access_token, ...user } })
   }
 }
