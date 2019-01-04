@@ -44,7 +44,7 @@ class Register extends React.Component {
         <a
           rel="noopeneder noreferrer"
           // eslint-disable-next-line
-          href="https://slack.com/oauth/authorize?scope=identity.basic&client_id=154966377728.516246535895"
+          href="https://slack.com/oauth/authorize?scope=identity.basic identity.email identity.avatar&client_id=154966377728.516246535895"
         >
           <img
             src="https://api.slack.com/img/sign_in_with_slack.png"

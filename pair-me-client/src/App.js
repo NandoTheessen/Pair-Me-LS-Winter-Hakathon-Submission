@@ -14,10 +14,10 @@ class App extends Component {
   componentDidMount() {
     const { search } = this.props.location
     if (search) {
-      const code = search.slice(6, -7)
+      const token = search.slice(6, -7)
       axios
         .post(`https://evening-refuge-39471.herokuapp.com/api/users/login`, {
-          code
+          token
         })
         .then(res => {
           // do redux stuff here
