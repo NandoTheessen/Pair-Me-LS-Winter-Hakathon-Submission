@@ -144,6 +144,7 @@ table {
 
 :root {
   --background-bg: #7bd3f7;
+  --special-color: ;
 }
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat|Oswald|Lobster|Lato');
@@ -392,8 +393,6 @@ body {
 .address {
   border: 1px solid black;
 }
-.footer-cta {
-}
 
 /****************************************************************************************************/
 /*** END FOOTEr ***/
@@ -424,7 +423,7 @@ body {
   border: 2px solid gray;
 }
 
-.offer-beacons {
+.badges {
   text-align: center;
   border: 2px solid gray;
   width: 45%;
@@ -437,27 +436,9 @@ body {
   margin: 20px 0px;
 }
 
+.badge {
+  width: 100px;
+}
 /****************************************************************************************************/
 /*** END DASHBOARD ***/
 /****************************************************************************************************/
-<<<<<<< HEAD
-=======
-
-/*************************/
-/** Landing Page Slack **/
-/************************/
-.slack-login {
-  width: 100%;
-  display: block;
-}
-
-.slack-button {
-  top: 50%;
-  display: flex;
-  margin: auto;
-}
-
-.welcome-right {
-  min-width: 170px;
-}
->>>>>>> 248ff972536c2f6e6d69f8bd42a25cfaa7a42ecf

@@ -1,13 +1,5 @@
 import React from 'react'
 import { withRouter } from 'react-router-dom'
-<<<<<<< HEAD
-import Login from './Login'
-
-
-
-import Register from './Register'
-=======
->>>>>>> 248ff972536c2f6e6d69f8bd42a25cfaa7a42ecf
 
 class Welcome extends React.Component {
   constructor(props) {

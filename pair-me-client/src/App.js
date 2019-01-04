@@ -7,6 +7,9 @@ import axios from 'axios'
 import Navigation from './components/Navigation'
 import Welcome from './components/Welcome'
 import Dashboard from './components/Dashboard'
+// Temporary dummy image files
+import certificate_solid from './assets/certificate_solid.svg'
+import ribbon_solid from './assets/ribbon_solid.svg'
 
 class App extends Component {
   componentDidMount() {
@@ -24,7 +27,26 @@ class App extends Component {
         .catch(e => console.log(e))
     }
   }
+
   render() {
+    const badges = [
+      {
+        id: 0,
+        imageUrl: certificate_solid,
+        name: 'consecutive_5'
+      },
+      {
+        id: 1,
+        imageUrl: ribbon_solid,
+        name: 'good_sherpa_5'
+      }
+    ]
+    /*
+      `good_sherpa_5`,
+      `consecutive_5`,
+      `helper_react_2`,
+      `helper_js_2`
+    */
     return (
       <div className="App">
         <div className="nav-container">
@@ -33,7 +55,11 @@ class App extends Component {
         <div className="app-container">
           <Switch>
             <Route exact path="/" component={Welcome} />
-            <Route exact path="/dashboard" component={Dashboard} />
+            <Route
+              exact
+              path="/dashboard"
+              render={props => <Dashboard badges={badges} {...props} />}
+            />
             {/* Routes go here */}
           </Switch>
         </div>
