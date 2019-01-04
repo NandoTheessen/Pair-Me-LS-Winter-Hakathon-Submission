@@ -38,29 +38,13 @@ export const testAPI = () => {
 
 export const logout = () => {
   return dispatch => {
-    dispatch({ type: LOGGING_OUT })
-    // this is where we will remove the JWT from localstorage
-
     dispatch({ type: LOGGED_OUT })
-
-    window.location.href = '/'
   }
 }
 
-export const login = user => {
+export const login = ({ email, access_token, name }) => {
   return dispatch => {
-    dispatch({ type: LOGGING_IN })
-
-    dispatch({ type: LOGGED_IN })
-
-    console.log('Logged In: ', user)
-  }
-}
-
-export const register = user => {
-  return dispatch => {
-    dispatch({ type: REGISTER })
-
-    console.log('Registered: ', user)
+    localStorage.setItem('access_token', access_token)
+    dispatch({ type: LOGGED_IN, payload: { email, access_token, name } })
   }
 }
