@@ -14,8 +14,8 @@ class Dashboard extends React.Component {
   render() {
     return (
       <div className="dashboard-container">
-        <div className="dashboard-banner">
-          <h1>Dashboard</h1>
+        <div className="welcome-banner">
+          <h1 className="title">Dashboard</h1>
         </div>
 
         <div className="beacon-container">
