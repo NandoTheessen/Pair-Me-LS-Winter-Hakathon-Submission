@@ -1,52 +1,38 @@
 import React from 'react'
 import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { login, register } from '../actions/index'
+import { login } from '../actions/index'
 
 class Login extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       username: '',
-
-      password1: '',
-      password2: '',
-      email: ''
+      password: ''
     }
   }
 
   handleInput = event => {
-    event.preventDefault()
+    event.preventDefault();
     this.setState({
       [event.target.name]: event.target.value
     })
   }
 
   handleLogin = event => {
-    event.preventDefault()
+    event.preventDefault();
     const user = {
       username: this.state.username,
-      password: this.state.password1
+      password: this.state.password
     }
     // TODO: BUILD OUT LOGIN ACTION
     this.props.login(user)
   }
 
-  handleRegistration = event => {
-    event.preventDefault()
-    let user = {
-      username: this.state.username,
-      password1: this.state.password1,
-      password2: this.state.password2,
-      email: this.state.email
-    }
-    this.props.register(user)
-    //TODO: don't forget to make a register action
-  }
-
-  showLogin = () => {
-    return (
-      <div className="login-container">
+  render(){
+      return(
+        <div className="register-container">
+        <h1>Log In</h1>
         <form onSubmit={this.handleLogin}>
           <input
             type="text"
@@ -54,66 +40,34 @@ class Login extends React.Component {
             value={this.state.username}
             onChange={this.handleInput}
             placeholder="Username"
+            autoComplete='username'
           />
           <input
             type="password"
-            name="password1"
+            name="password"
             value={this.state.password1}
             onChange={this.handleInput}
             placeholder="Password"
+            autoComplete='current-password'
           />
           <button type="submit">Login</button>
         </form>
       </div>
-    )
+      )
   }
-
-  showRegister = () => {
-    return (
-      <div className="register-container">
-        <form onSubmit={this.handleRegistration}>
-          <input
-            type="text"
-            name="username"
-            value={this.state.username}
-            onChange={this.handleInput}
-            placeholder="Username"
-          />
-          <input
-            type="password"
-            name="password1"
-            value={this.state.password1}
-            onChange={this.handleInput}
-            placeholder="Password"
-          />
-          <input
-            type="password"
-            name="password2"
-            value={this.state.password2}
-            onChange={this.handleInput}
-            placeholder="Verify Password"
-          />
-          <button type="submit">Register yourself!</button>
-        </form>
-      </div>
-    )
-  }
-
-  render() {
+}
     // Login check that redirects if user is logged in
     // if(localStorage.getItem('uuid') || this.props.isLoggedIn){
     //     this.props.history.push('/dashboard')
     // }
-    return this.props.isLogin ? this.showLogin() : this.showRegister()
-  }
+  
+
+const mapStateToProps = state => {
+    return {
+        isLoggedIn: state.isLoggedIn,
+    }
 }
 
-export default withRouter(
-  connect(
-    () => {},
-    {
-      login,
-      register
-    }
-  )(Login)
-)
+export default withRouter(connect(mapStateToProps, {
+    login,
+})(Login));

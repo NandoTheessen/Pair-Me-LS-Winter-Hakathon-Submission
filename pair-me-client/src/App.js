@@ -1,13 +1,31 @@
 import React, { Component } from 'react'
 import './App.css'
-import { Switch, Route, Link, withRouter } from 'react-router-dom'
+import { Switch, Route, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { testAPI } from './actions/index'
+import axios from 'axios'
 import Navigation from './components/Navigation'
 import Login from './components/Login'
 import Welcome from './components/Welcome'
+import Register from './components/Register'
+import Dashboard from './components/Dashboard'
 
 class App extends Component {
+  componentDidMount() {
+    const { search } = this.props.location
+    if (search) {
+      const code = search.slice(6, -7)
+      axios
+        .post(`https://evening-refuge-39471.herokuapp.com/api/users/login`, {
+          code
+        })
+        .then(res => {
+          // do redux stuff here
+          console.log(res)
+        })
+        .catch(e => console.log(e))
+    }
+  }
   render() {
     return (
       <div className="App">
@@ -17,13 +35,9 @@ class App extends Component {
         <div className="app-container">
           <Switch>
             <Route exact path="/" component={Welcome} />
-            <Route
-              exact
-              path="/login"
-              render={props => <Login {...props} isLogin={true} />}
-            />
-            <Route exact path="/register" component={Login} />
-
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/register" component={Register} />
+            <Route exact path="/dashboard" component={Dashboard} />
             {/* Routes go here */}
           </Switch>
         </div>
