@@ -1,11 +1,8 @@
-const initialState = {
-  isLoggedIn: false,
-  error: null
-}
 
-export const rootReducer = (state = initialState, action) => {
-  switch (action.type) {
-    default:
-      return state
-  }
-}
+import { combineReducers } from 'redux'
+import { userReducer } from './userReducer'
+
+export default combineReducers({
+  userReducer
+})
+
