@@ -438,3 +438,13 @@ body {
 .robot {
   width: 100%;
 }
+
+.slackbot {
+  width: 100%;
+}
+.message-wrapper {
+  width: 100%;
+}
+.slackMessage {
+  margin-left: 25%;
+}

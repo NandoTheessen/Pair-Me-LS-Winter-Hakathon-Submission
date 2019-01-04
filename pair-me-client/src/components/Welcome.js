@@ -1,6 +1,8 @@
 import React from 'react'
 import { withRouter } from 'react-router-dom'
 import robot from '../robot.png'
+import slackbot from '../slackbot.png'
+import slackMessage from '../slackMessage.png'
 
 class Welcome extends React.Component {
   constructor(props) {
@@ -14,8 +16,10 @@ class Welcome extends React.Component {
     return (
       <div className="welcome-container">
         <div className="welcome-banner">
-          <h1>PairMe</h1>
-          <h2>Get help when you need it, give help when you can.</h2>
+          <h1 style={{ lineHeight: 1.5 }}>PairMe</h1>
+          <h2 style={{ fontWeight: 700 }}>
+            Get help when you need it, give help when you can.
+          </h2>
           {/* Full-width banner image with logo
     Nav stays sticky on top with sign-up button */}
         </div>
@@ -24,9 +28,10 @@ class Welcome extends React.Component {
           <div className="welcome-left">
             <div className="welcome-header">
               <h3>Welcome to PairMe! </h3>
+
               <h4>
-                We're building a better way for students to find
-                pair-programming partners.
+                We're building a better way for students to find and receive
+                help.
               </h4>
             </div>
             <div className="welcome-content">
@@ -45,7 +50,6 @@ class Welcome extends React.Component {
                 pair those seeking guidance with those offering assistance. The
                 process is simple:
               </p>
-              [IMAGE OF DASHBOARD]
               <p>
                 Say you’re being introduced to React for the first time. You’ve
                 watched the lecture video, tried some online resources, and put
@@ -54,27 +58,30 @@ class Welcome extends React.Component {
                 crazy, stuck in isolation, and just want someone to talk this
                 through with you.
               </p>
+
               <p>
                 Another student finished learning React a few weeks ago, and
                 loves to bring other fledgling developers into the light of
-                component-based architecture. They light a beacon offering help
-                with React and other JavaScript topics.
+                component-based architecture. They start a DM with the PairMe
+                Slackbot - `assist React` - and are put into a queue awaiting
+                those in need of help.
               </p>
-              [IMAGES OF BEACON LIGHTING]
               <p>
-                Once you light your beacon asking for help through the JSX
-                jungle, a Slack notification informs you of a Zoom meeting
-                that’s been set up automatically where you can talk to the other
-                student about all things React.
+                Once you DM the PairMe bot with `help React`, the bot will
+                recognize that there are two people that can be matched for a
+                topic and informs you and the person who volunteered to help you
+                navigate the waters of React that a match has been made. This
+                takes a lot of the guesswork out of trouble-shooting inqueries
+                and we hope will encourage you to reach out for help when you
+                need it.
               </p>
-              [IMAGE OF SLACK NOTIFICATION]
-              <p>
-                And get this: your meeting will be listed on the PairMe
-                dashboard in case other students want to join in on the
-                discussion (unless you signal for a private meeting, of course
-                ;) ).
-              </p>
-              [IMAGE OF ACTIVE MEETINGS]
+              <div className="message-wrapper">
+                <img
+                  className="slackMessage"
+                  src={slackMessage}
+                  alt="Slack message"
+                />
+              </div>
               <p>
                 We automate the process of finding face-to-face code instruction
                 so that your calls for help don’t get lost in the Slack
@@ -82,11 +89,6 @@ class Welcome extends React.Component {
                 We’ll keep track of how many debug dragons you’ve slain, so you
                 can show off to all the other devs your skills in collaborative
                 problem solving.
-              </p>
-              <p>
-                PairMe also reduces redundancy, by letting students know when a
-                meeting on a topic is active, so they can jump right in without
-                having to look for the link, or start another conference.
               </p>
               <p>
                 Coding is fun. It’s challenging. Sometimes, it’s really hard,
@@ -115,6 +117,9 @@ class Welcome extends React.Component {
                 />
               </a>
             </div>
+            <br />
+            <br />
+            <img className="slackbot" src={slackbot} alt="Slackbot" />
           </div>
         </div>
       </div>
