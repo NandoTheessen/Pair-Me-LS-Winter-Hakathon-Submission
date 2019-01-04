@@ -1,15 +1,18 @@
-import React, { Component } from 'react';
-import './App.css';
-import { Switch, Route, withRouter } from 'react-router-dom';
-import { connect } from 'react-redux';
-import { testAPI } from './actions/index';
-import Navigation from './components/Navigation';
-import Login from './components/Login';
-import Welcome from './components/Welcome';
-import Register from './components/Register';
-import Dashboard from './components/Dashboard';
+import React, { Component } from 'react'
+import './App.css'
+import { Switch, Route, withRouter } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { testAPI } from './actions/index'
+import Navigation from './components/Navigation'
+import Login from './components/Login'
+import Welcome from './components/Welcome'
+import Register from './components/Register'
+import Dashboard from './components/Dashboard'
 
 class App extends Component {
+  componentDidMount() {
+    console.log(this.props)
+  }
   render() {
     return (
       <div className="App">
@@ -19,9 +22,9 @@ class App extends Component {
         <div className="app-container">
           <Switch>
             <Route exact path="/" component={Welcome} />
-            <Route exact path = '/login' component={Login} />
-            <Route exact path= '/register' component={Register} />
-            <Route exact path = '/dashboard' component={Dashboard} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/register" component={Register} />
+            <Route exact path="/dashboard" component={Dashboard} />
             {/* Routes go here */}
           </Switch>
         </div>
