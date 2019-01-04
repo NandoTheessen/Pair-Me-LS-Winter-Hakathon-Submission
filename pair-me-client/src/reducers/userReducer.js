@@ -6,8 +6,8 @@ const initialState = {
   name: null,
   isLoggedIn: false,
   error: null,
-  teachers: [],
-  students: [],
+  teacher: [],
+  student: [],
   username: '',
   storing_queues: false,
   queues_stored: false,
@@ -35,8 +35,8 @@ export const userReducer = (state = initialState, action) => {
     case QUEUES_STORED:
       return Object.assign({}, state, {
         storing_queues: false,
-        teachers: action.payload.teachers,
-        students: action.payload.students,
+        teacher: action.payload.teacher,
+        student: action.payload.student,
         username: action.payload.username,
         avatar: action.payload.avatar,
         email: action.payload.email,
