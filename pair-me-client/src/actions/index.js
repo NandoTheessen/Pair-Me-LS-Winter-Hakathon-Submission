@@ -35,19 +35,20 @@ export const storeLocally = data => {
   return dispatch => {
     // store the current user
     dispatch({ type: STORING_QUEUES })
-    localStorage.setItem('username', data.data.user.name)
-    localStorage.setItem('token', data.data.access_token)
     console.log(data)
+    const { user } = data.data
+    localStorage.setItem('username', user.name)
+    localStorage.setItem('token', data.data.access_token)
     if (data.s_queue || data.t_queue) {
       dispatch({
         type: QUEUES_STORED,
         payload: {
           student: data.s_queue,
           teacher: data.t_queue,
-          username: data.data.user.name,
-          avatar: data.data.image_192,
-          email: data.data.email,
-          id: data.data.id
+          username: user.name,
+          avatar: user.image_192,
+          email: user.email,
+          id: user.id
         }
       })
       console.log('test for js', data.t_queue.js)
