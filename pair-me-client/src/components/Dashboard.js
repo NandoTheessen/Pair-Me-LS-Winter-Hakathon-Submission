@@ -57,23 +57,28 @@ class Dashboard extends React.Component {
         <div className="beacon-container">
           <div className="ask-beacons">
           <h1>Awaiting Assistance</h1>
+          {this.props.students}
           </div>
-          <div className="badges-container">
+          <div className = 'offer-beacons'>
+          <h1>Offering Assistance</h1>
+          {this.props.teachers}
+          </div>
+          
+          </div>
+
+        <div className="active-meetings"><h1>Active Meetings</h1></div>
+        <div className="badges-container">
             <div className="badges-header">YOUR BADGES</div>
             <div className="badges-text">Here are the badges you earned!</div>
 
 
-            {/* {this.props.badges.map(badge => (
+            {this.props.badges.map(badge => (
               <div className="badge-container" key={badge.id}>
                 <img className="badge" src={badge.imageUrl} alt={badge.name} />
                 <p className="badge-description">{badge.description}</p>
               </div>
-            ))} */}
-            <div />
-          </div>
-        </div>
-
-        <div className="active-meetings">[ACTIVE MEETINGS]</div>
+            ))}
+            </div>
       </div>
     )
   }
