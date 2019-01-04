@@ -97,7 +97,7 @@ class Welcome extends React.Component {
           </div>
           <div className="welcome-right">
             {/* Renders the login or registration form depending on user selection */}
-            <img className="robot" src={robot} alt="Robot" />;
+            <img className="robot" src={robot} alt="Robot" />
             <div className="slack-login">
               <a
                 rel="noopeneder noreferrer"
