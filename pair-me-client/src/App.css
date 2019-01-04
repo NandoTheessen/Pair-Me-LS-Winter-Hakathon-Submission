@@ -440,10 +440,10 @@ body {
 .badges-header {
   border: 2px solid black;
   border-radius: 10px;
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   width: 70%;
   margin: 0 auto;
-  font-weight: 100;
+  font-weight: 150;
   background: grey;
   color: white;
 }
@@ -460,12 +460,14 @@ body {
   border: 2px solid rgb(42, 42, 102);
   border-radius: 10px;
   background: lightcyan;
-  margin: 0 10px;
+  margin: 10px 10px;
 }
 
 .badge-description {
   font-size: 1.3rem;
   align-self: center;
+  width: 75%;
+  margin-left: 20px;
 }
 .badge {
   width: 100px;

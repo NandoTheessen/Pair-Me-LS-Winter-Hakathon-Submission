@@ -10,6 +10,8 @@ import Dashboard from './components/Dashboard'
 // Temporary dummy image files
 import certificate_solid from './assets/certificate_solid.svg'
 import ribbon_solid from './assets/ribbon_solid.svg'
+import react_badge from './assets/react_badge.svg'
+import js_square from './assets/js_square.svg'
 
 class App extends Component {
   componentDidMount() {
@@ -43,6 +45,20 @@ class App extends Component {
         name: 'good_sherpa_5',
         description:
           'Wow, you helped 5 people! You have a heart of gold. Thanks for being you.'
+      },
+      {
+        id: 2,
+        imageUrl: react_badge,
+        name: 'helper_react_2',
+        description:
+          'React is hard. Very hard. You made it easier for two others. Go you.'
+      },
+      {
+        id: 3,
+        imageUrl: js_square,
+        name: 'helper_js_2',
+        description:
+          'Javascript is confusing. You made it less confusing for two others. We commend your service.'
       }
     ]
     /*
