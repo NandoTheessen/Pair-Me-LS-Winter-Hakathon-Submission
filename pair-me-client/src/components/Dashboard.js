@@ -70,8 +70,8 @@ const mapStateToProps = state => {
     email: userReducer.email,
     access_token: userReducer.access_token,
     name: userReducer.name,
-    teacher: userReducer.teachers,
-    student: userReducer.students,
+    teacher: userReducer.teacher,
+    student: userReducer.student,
     username: userReducer.username,
     avatar: userReducer.avatar
   }
