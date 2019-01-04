@@ -1,34 +1,9 @@
 import React from 'react'
 import { withRouter } from 'react-router-dom'
 import Login from './Login'
-<<<<<<< HEAD
-import Footer from './Footer'
-import pairprogramming from '../assets/pairprogramming.jpeg'
 
-const Welcome = props => {
-  return (
-    <>
-      <div className="welcome-container">
-        <img
-          className="pair-programming-img"
-          src={pairprogramming}
-          alt="Logo"
-        />
-        <div className="welcome-right">
-          <h1>Welcome to PairMe!</h1>
-          <div>
-            <p>To get started, register here: </p>
-            <Login />
-          </div>
-          <NavLink to="/login">
-            Already have an account? Awesome: Login here!
-          </NavLink>
-        </div>
-      </div>
-      <Footer />
-    </>
-  )
-=======
+
+
 import Register from './Register'
 
 class Welcome extends React.Component {
@@ -167,7 +142,6 @@ class Welcome extends React.Component {
       </div>
     )
   }
->>>>>>> bfedf683bc6ecfdf7e7a886fe17a67f437c45ded
 }
 
 export default withRouter(Welcome)
