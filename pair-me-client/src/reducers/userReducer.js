@@ -7,12 +7,9 @@ import {
 
 const initialState = {
   email: null,
-  access_token: null,
   name: null,
   isLoggedIn: false,
   error: null,
-  teachers: [],
-  students: [],
   username: '',
   storing_queues: false,
   queues_stored: false,
