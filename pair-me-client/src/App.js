@@ -16,7 +16,9 @@ class App extends Component {
     if (search) {
       const token = search.slice(0, -7)
       axios
-        .post(`/api/users/login`, { token })
+        .post(`https://evening-refuge-39471.herokuapp.com/api/users/login`, {
+          token
+        })
         .then(res => {
           // do redux stuff here
         })
