@@ -19,11 +19,16 @@ class Dashboard extends React.Component {
         </div>
 
         <div className="beacon-container">
-          <div className="ask-beacons">[ASK BEACONS]</div>
-          <div className="offer-beacons">[OFFER BEACONS]</div>
+          <div className="ask-beacons">
+            <div>[ASK BEACONS]</div>
+          </div>
+          <div className="offer-beacons">
+            <div className="offer-beacons">[OFFER BEACONS]</div>
+          </div>
         </div>
-
-        <div className="active-meetings">[ACTIVE MEETINGS]</div>
+        <div className="active-meetings">
+          <div>[ACTIVE MEETINGS]</div>
+        </div>
       </div>
     )
   }

@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import './App.css'
 import { Switch, Route, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { testAPI } from './actions/index'
 import axios from 'axios'
 import Navigation from './components/Navigation'
 import Welcome from './components/Welcome'
@@ -49,11 +48,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default withRouter(
-  connect(
-    mapStateToProps,
-    {
-      testAPI
-    }
-  )(App)
-)
+export default withRouter(connect(mapStateToProps)(App))
