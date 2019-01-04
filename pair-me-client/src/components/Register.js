@@ -40,17 +40,18 @@ class Register extends React.Component {
     return (
       <div className="register-container">
         <h1>Join Us!</h1>
-
-        <a
-          rel="noopeneder noreferrer"
-          // eslint-disable-next-line
-          href="https://slack.com/oauth/authorize?scope=identity.basic&client_id=154966377728.516246535895"
-        >
-          <img
-            src="https://api.slack.com/img/sign_in_with_slack.png"
-            alt="slack logo"
-          />
-        </a>
+        <div className="slack-login">
+          <a
+            rel="noopeneder noreferrer"
+            // eslint-disable-next-line
+            href="https://slack.com/oauth/authorize?client_id=154966377728.516246535895&scope=identity.basic"
+          >
+            <img
+              src="https://api.slack.com/img/sign_in_with_slack.png"
+              alt="slack logo"
+            />
+          </a>
+        </div>
         <form onSubmit={this.handleRegister}>
           <input
             type="email"

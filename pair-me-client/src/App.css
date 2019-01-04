@@ -148,7 +148,6 @@ table {
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat|Oswald|Lobster|Lato');
 
-
 /****************************************************************************************************/
 /*** BEGIN BODY APP ***/
 /****************************************************************************************************/
@@ -168,7 +167,6 @@ body {
 /****************************************************************************************************/
 /*** END BODY APP ***/
 /****************************************************************************************************/
-
 
 /****************************************************************************************************/
 /*** BEGIN NAVIGATION ***/
@@ -199,7 +197,8 @@ body {
 .navigation a {
   text-decoration: none;
   color: white;
-  background: var(--background-blue);}
+  background: var(--background-blue);
+}
 
 /****************************************************************************************************/
 /*** END NAVIGATION ***/
@@ -215,7 +214,6 @@ body {
   max-width: 100%;
   align-items: center;
 }
-
 
 .login-container form input {
   width: 30%;
@@ -255,13 +253,13 @@ body {
   font-family: 'Lobster', sans-serif;
 }
 
-.welcome-banner h1{
+.welcome-banner h1 {
   font-size: 4rem;
   font-weight: bold;
   text-shadow: 2px 2px black;
 }
 
-.welcome-banner h2{
+.welcome-banner h2 {
   font-family: 'Montserrat', sans-serif;
   font-size: 1.5rem;
   text-shadow: 1px 1px black;
@@ -282,28 +280,28 @@ body {
   font-family: 'Montserrat';
 }
 
-.welcome-header h3{
+.welcome-header h3 {
   font-weight: bold;
   margin: 10px 0px;
 }
 
-.welcome-header h4{
+.welcome-header h4 {
   font-size: 1rem;
 }
 
-.welcome-content p{
+.welcome-content p {
   font-size: 1rem;
   margin: 10px 0px;
 }
 
-.welcome-left{
+.welcome-left {
   width: 60%;
   background: white;
   border-radius: 20px;
   padding: 40px;
 }
 
-.welcome-right{
+.welcome-right {
   width: 25%;
   border-radius: 20px;
   padding: 20px;
@@ -342,7 +340,6 @@ body {
   max-width: 100%;
   align-items: center;
 }
-
 
 .register-container form input {
   width: 80%;
@@ -388,7 +385,7 @@ body {
   height: 25vh;
 }
 
-.dashboard-banner h1{
+.dashboard-banner h1 {
   font-family: 'Lobster';
   color: white;
   font-size: 3rem;
@@ -419,3 +416,7 @@ body {
 /****************************************************************************************************/
 /*** END DASHBOARD ***/
 /****************************************************************************************************/
+
+/*************************/
+/** Landing Page Slack **/
+/************************/
