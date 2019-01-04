@@ -9,18 +9,17 @@ export const LOGGED_OUT = 'LOGGED_OUT'
 export const LOGGED_IN = 'LOGGED_IN'
 export const LOGGING_IN = 'LOGGING_IN'
 
-
-export const STORING_QUEUES = 'STORING_QUEUES';
-export const QUEUES_STORED = 'QUEUES_STORED';
+export const STORING_QUEUES = 'STORING_QUEUES'
+export const QUEUES_STORED = 'QUEUES_STORED'
 
 // Register Dispatches
 export const REGISTER = 'REGISTER'
 
 export const logout = () => {
   return dispatch => {
-    localStorage.removeItem('username');
-    localStorage.removeItem('token');
-    console.log('LOGGED OUT');
+    localStorage.removeItem('username')
+    localStorage.removeItem('token')
+    console.log('LOGGED OUT')
     dispatch({ type: LOGGED_OUT })
   }
 }
@@ -32,18 +31,28 @@ export const login = ({ email, access_token, name }) => {
   }
 }
 
-export const storeLocally = (data) => {
+export const storeLocally = data => {
   return dispatch => {
     // store the current user
-    dispatch({type: STORING_QUEUES})
-    localStorage.setItem('username', data.data.user.name);
-    localStorage.setItem('token', data.data.access_token);
-    console.log(data.data.access_token);
-    if(data.s_queue || data.t_queue){
-      dispatch({type: QUEUES_STORED, payload: {student: data.s_queue, teacher: data.t_queue, username: data.data.user.name, avatar: data.data.image_192, email: data.data.email, id: data.data.id}})
+    dispatch({ type: STORING_QUEUES })
+    localStorage.setItem('username', data.data.user.name)
+    localStorage.setItem('token', data.data.access_token)
+    console.log(data)
+    if (data.s_queue || data.t_queue) {
+      dispatch({
+        type: QUEUES_STORED,
+        payload: {
+          student: data.s_queue,
+          teacher: data.t_queue,
+          username: data.data.user.name,
+          avatar: data.data.image_192,
+          email: data.data.email,
+          id: data.data.id
+        }
+      })
       console.log('test for js', data.t_queue.js)
     } else {
-      dispatch({type: ERROR})
+      dispatch({ type: ERROR })
     }
   }
 }
