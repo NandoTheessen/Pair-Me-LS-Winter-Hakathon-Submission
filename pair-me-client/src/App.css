@@ -465,6 +465,7 @@ body {
   background: #f7c17b;
   border-left: 1px solid white;
   border-right: 1px solid black;
+  min-height: 30vh
 }
 
 .ask-beacons h1{
@@ -478,7 +479,7 @@ body {
 
 .active-meetings {
   width: 100%;
-  height: 25vh;
+  min-height: 20vh;
   border: 1px solid white;
   border-top: none;
   border-radius: 0px 0px 10px 10px;
@@ -492,6 +493,7 @@ body {
   border-left: 0.5px solid black;
   width: 50%;
   background: #7bf79e;
+  min-height: 30vh;
 }
 
 .badges-header {
