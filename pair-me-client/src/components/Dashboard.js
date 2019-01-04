@@ -68,18 +68,18 @@ class Dashboard extends React.Component {
   }
 }
 
-const mapStateToProps = userReducer => {
-  const { state } = userReducer
+const mapStateToProps = state => {
+  const { userReducer } = state
   console.log('state, you lift bro?', state)
   return {
-    isLoggedIn: state.isLoggedIn,
-    email: state.email,
-    access_token: state.access_token,
-    name: state.name,
-    teacher: state.teacher,
-    student: state.student,
-    username: state.username,
-    avatar: state.avatar
+    isLoggedIn: userReducer.isLoggedIn,
+    email: userReducer.email,
+    access_token: userReducer.access_token,
+    name: userReducer.name,
+    teacher: userReducer.teacher,
+    student: userReducer.student,
+    username: userReducer.username,
+    avatar: userReducer.avatar
   }
 }
 
