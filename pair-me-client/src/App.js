@@ -16,7 +16,7 @@ class App extends Component {
     if (search) {
       const token = search.slice(0, -7)
       axios
-        .post(`/api/slack/login`, { token })
+        .post(`/api/users/login`, { token })
         .then(res => {
           // do redux stuff here
         })
