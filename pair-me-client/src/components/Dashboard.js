@@ -12,14 +12,26 @@ class Dashboard extends React.Component {
   }
 
   render() {
+    console.log(this.state)
     return (
       <div className="dashboard-container">
         <div className="dashboard-banner">
           <h1 className="title">Dashboard</h1>
         </div>
 
+      <div className = 'toolbar'>
+      <div className = 'toolbar-link'>Profile</div>
+      <div className = 'avatar'></div>
+      <div className = 'toolbar-link'>Badges</div>
+      {/* <div className = 'toolbar-nav'>
+      <div>Profile</div>
+      <div>Badges</div>
+      </div> */}
+      </div>
         <div className="beacon-container">
-          <div className="ask-beacons">[TOPICS ON OFFER]</div>
+          <div className="ask-beacons">
+          <h1>Awaiting Assistance</h1>
+          </div>
           <div className="badges-container">
             <div className="badges-header">YOUR BADGES</div>
             <div className="badges-text">Here are the badges you earned!</div>
@@ -41,7 +53,10 @@ class Dashboard extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    isLoggedIn: state.isLoggedIn
+    isLoggedIn: state.isLoggedIn,
+    email: state.email,
+    access_token: state.access_token,
+    name: state.name,
   }
 }
 

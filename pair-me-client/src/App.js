@@ -23,13 +23,18 @@ class App extends Component {
         })
         .then(res => {
           // do redux stuff here
-          console.log(res)
+          console.log(res.data)
+          console.log(res.data.data)
+          console.log(res.data.access_token)
+          console.log(res.data.data.access_token)
+          console.log(res.data.user.name)
         })
         .catch(e => console.log(e))
     }
   }
 
   render() {
+    console.log(this.props)
     const badges = [
       {
         id: 0,
@@ -68,9 +73,7 @@ class App extends Component {
     */
     return (
       <div className="App">
-        <div className="nav-container">
-          <Navigation />
-        </div>
+        
         <div className="app-container">
           <Switch>
             <Route exact path="/" component={Welcome} />
