@@ -37,15 +37,19 @@ class Dashboard extends React.Component {
           <div className="ask-beacons">
             <h1>Awaiting Assistance</h1>
             {/* {this.props.students} */}
+            <div className = 'user-card'>Adam Reid - Git</div>
+            <div className = 'user-card'>Kai L. - React</div>
           </div>
           <div className="offer-beacons">
             <h1>Offering Assistance</h1>
             {/* {this.props.teachers} */}
+            <div className = 'user-card'>Nando Theessen - Node</div>
           </div>
         </div>
 
         <div className="active-meetings">
           <h1>Active Meetings</h1>
+          <div className = 'user-card'>Amy Shackles with Ronald Libago - Python</div>
         </div>
         <div className="badges-container">
           <div className="badges-header">YOUR BADGES</div>

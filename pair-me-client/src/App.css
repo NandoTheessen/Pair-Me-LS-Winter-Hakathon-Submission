@@ -481,7 +481,6 @@ body {
   font-family: 'Montserrat', sans-serif;
   color: white;
   font-size: 1.5rem;
-  margin: 10px 0px;
   font-weight: bold;
 }
 
@@ -523,6 +522,17 @@ body {
   font-weight: bold;
 }
 
+.user-card{
+  font-family: 'Montserrat';
+  font-weight: bold;
+  margin: 10px 0px;
+  border: 1px solid black;
+  padding: 5px;
+  border-radius: 10px;
+  background: white;
+  cursor: pointer;
+  text-align: center;
+}
 
 
 .badges-container {
