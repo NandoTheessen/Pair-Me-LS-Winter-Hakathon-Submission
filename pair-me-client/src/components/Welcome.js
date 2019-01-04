@@ -104,7 +104,7 @@ class Welcome extends React.Component {
               <a
                 rel="noopeneder noreferrer"
                 // eslint-disable-next-line
-                href="https://slack.com/oauth/authorize?client_id=154966377728.516246535895&scope=identity.basic"
+                href="https://slack.com/oauth/authorize?scope=identity.basic identity.email identity.avatar&client_id=154966377728.516246535895"
               >
                 <img
                   className="slack-button"
