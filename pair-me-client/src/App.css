@@ -154,14 +154,15 @@ table {
 /****************************************************************************************************/
 body {
   background: var(--background-bg);
+
 }
 
-.App {
+/* .App {
   width: 90%;
   display: flex;
   flex-direction: column;
   align-items: center;
-}
+} */
 
 .app-container {
   width: 90%;
@@ -411,7 +412,8 @@ body {
 .dashboard-banner h1 {
   font-family: 'Lobster';
   color: white;
-  font-size: 3rem;
+  font-size: 4rem;
+  font-weight: bold;
   text-align: center;
   margin: 20px 0px;
   text-shadow: 2px 2px black;

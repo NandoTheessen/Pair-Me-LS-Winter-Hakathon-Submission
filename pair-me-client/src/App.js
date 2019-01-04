@@ -68,9 +68,7 @@ class App extends Component {
     */
     return (
       <div className="App">
-        <div className="nav-container">
-          <Navigation />
-        </div>
+        
         <div className="app-container">
           <Switch>
             <Route exact path="/" component={Welcome} />
