@@ -1,19 +1,21 @@
-import { LOGGED_IN, LOGGED_OUT, STORING_QUEUES, QUEUES_STORED } from '../actions/index'
+import {
+  LOGGED_IN,
+  LOGGED_OUT,
+  STORING_QUEUES,
+  QUEUES_STORED
+} from '../actions/index'
 
 const initialState = {
   email: null,
-  access_token: null,
   name: null,
   isLoggedIn: false,
   error: null,
-  teachers: [],
-  students: [],
   username: '',
   storing_queues: false,
   queues_stored: false,
   isLoggedOut: false,
   userID: null,
-  avatar: null,
+  avatar: null
 }
 
 export const userReducer = (state = initialState, action) => {
@@ -29,20 +31,22 @@ export const userReducer = (state = initialState, action) => {
     case STORING_QUEUES:
       return Object.assign({}, state, {
         storing_queues: true,
-        queues_stored: false,
+        queues_stored: false
       })
 
     case QUEUES_STORED:
-      return Object.assign({}, state, {
+      return {
+        ...state,
+        isLoggedIn: true,
         storing_queues: false,
-        teachers: action.payload.teachers,
-        students: action.payload.students,
+        teacher: action.payload.teachers,
+        student: action.payload.students,
         username: action.payload.username,
         avatar: action.payload.avatar,
         email: action.payload.email,
-        userID: action.payload.id,
+        id: action.payload.id,
         queues_stored: true
-      })
+      }
 
     default:
       return state
