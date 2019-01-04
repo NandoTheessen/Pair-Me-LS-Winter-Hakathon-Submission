@@ -41,11 +41,11 @@ class Dashboard extends React.Component {
         <div className="beacon-container">
           <div className="ask-beacons">
             <h1>Awaiting Assistance</h1>
-            {this.props.students}
+            {/* {this.props.students} */}
           </div>
           <div className="offer-beacons">
             <h1>Offering Assistance</h1>
-            {this.props.teachers}
+            {/* {this.props.teachers} */}
           </div>
         </div>
 
@@ -68,7 +68,8 @@ class Dashboard extends React.Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = userReducer => {
+  const { state } = userReducer
   console.log('state, you lift bro?', state)
   return {
     isLoggedIn: state.isLoggedIn,
