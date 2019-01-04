@@ -21,6 +21,7 @@ class App extends Component {
         })
         .then(res => {
           // do redux stuff here
+          console.log(res)
         })
         .catch(e => console.log(e))
     }
