@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import './App.css'
 import { Switch, Route, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { testAPI } from './actions/index'
+import { login } from './actions/index'
 import axios from 'axios'
 import Navigation from './components/Navigation'
 import Welcome from './components/Welcome'
@@ -20,6 +20,8 @@ class App extends Component {
         .then(res => {
           // do redux stuff here
           console.log(res)
+          this.props.login(res.data)
+          this.props.history.push('/dashboard')
         })
         .catch(e => console.log(e))
     }
@@ -53,7 +55,7 @@ export default withRouter(
   connect(
     mapStateToProps,
     {
-      testAPI
+      login
     }
   )(App)
 )

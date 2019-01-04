@@ -37,12 +37,14 @@ export const testAPI = () => {
 }
 
 export const logout = () => {
+  localStorage.removeItem('access_token')
   return dispatch => {
     dispatch({ type: LOGGED_OUT })
   }
 }
 
 export const login = ({ email, access_token, name }) => {
+  localStorage.setItem('access_token', access_token)
   return dispatch => {
     localStorage.setItem('access_token', access_token)
     dispatch({ type: LOGGED_IN, payload: { email, access_token, name } })
