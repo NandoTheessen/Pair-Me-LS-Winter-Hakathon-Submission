@@ -3,8 +3,29 @@ import '../App.css'
 import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux';
 import {logout} from '../actions/index';
+import axios from 'axios';
 
 class Dashboard extends React.Component {
+  componentDidMount() {
+    const { search } = this.props.location
+    if (search) {
+      const token = search.slice(6, -7)
+      axios
+        .post(`https://evening-refuge-39471.herokuapp.com/api/users/login`, {
+          token
+        })
+        .then(res => {
+          // do redux stuff here
+          this.props.storeLocally(res.data)
+          console.log(res.data)
+          console.log(res.data.data)
+          // this is our schema: res.data.data.whatever
+          console.log(res.data.data.access_token)
+          console.log(res.data.user.name)
+        })
+        .catch(e => console.log(e))
+    }
+  }
   constructor(props) {
     super(props)
     this.state = {

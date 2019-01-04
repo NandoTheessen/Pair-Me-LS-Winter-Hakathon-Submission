@@ -13,6 +13,10 @@ class Welcome extends React.Component {
   }
 
   render() {
+    // if there is a user logged in, push to the dashboard
+    if(localStorage.getItem('username')){
+      this.props.history.push('/dashboard')
+    }
     return (
       <div className="welcome-container">
         <div className="welcome-banner">
@@ -62,16 +66,16 @@ class Welcome extends React.Component {
                 Another student finished learning React a few weeks ago, and
                 loves to bring other fledgling developers into the light of
                 component-based architecture. They start a DM with the PairMe
-                Slackbot - `assist React` - and are put into a queue awaiting
+                Slackbot - `/assist React` - and are put into a queue awaiting
                 those in need of help.
               </p>
               <p>
-                Once you DM the PairMe bot with `help React`, the bot will
+                Once you DM the PairMe bot with `/help React`, the bot will
                 recognize that there are two people that can be matched for a
                 topic and informs you and the person who volunteered to help you
-                navigate the waters of React that a match has been made. This
-                takes a lot of the guesswork out of trouble-shooting inqueries
-                and we hope will encourage you to reach out for help when you
+                that a match has been made. This
+                takes a lot of the guesswork out of trouble-shooting inquiries
+                and we hope it will encourage new programmers to reach out for help when they
                 need it.
               </p>
               <div className="message-wrapper">
@@ -94,7 +98,7 @@ class Welcome extends React.Component {
                 but it’s always a little easier when we work together.
               </p>
               <p>
-                PairMe puts programmers together, because more importantly than
+                PairMe puts programmers together, because more important than
                 learning to code, are the friends we make along the way.
               </p>
             </div>
@@ -124,4 +128,5 @@ class Welcome extends React.Component {
     )
   }
 }
-export default withRouter(Welcome)
+export default withRouter(Welcome);
+

@@ -35,11 +35,11 @@ class App extends Component {
     }
   }
 
-  componentWillReceiveProps(newProps){
-    if(newProps.queues_stored){
-      this.props.history.push('/dashboard')
-    }
-  }
+  // componentWillReceiveProps(newProps){
+  //   if(newProps.queues_stored){
+  //     this.props.history.push('/dashboard')
+  //   }
+  // }
 
   render() {
     const badges = [
@@ -84,13 +84,13 @@ class App extends Component {
         <div className="app-container">
           <Switch>
             <Route exact path = "/" component={Welcome} />
-            <Route exact path = '/' component={Dashboard} />
+            {/* <Route exact path = '/dashboard' component={Dashboard} /> */}
             
-            {/* <Route
+            <Route
               exact
               path="/dashboard"
               render={props => <Dashboard badges={badges} {...props} />}
-            /> */}
+            />
             {/* Routes go here */}
           </Switch>
         </div>
