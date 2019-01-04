@@ -66,11 +66,11 @@ class Welcome extends React.Component {
                 Another student finished learning React a few weeks ago, and
                 loves to bring other fledgling developers into the light of
                 component-based architecture. They start a DM with the PairMe
-                Slackbot - `/assist React` - and are put into a queue awaiting
+                Slackbot - `assist React` - and are put into a queue awaiting
                 those in need of help.
               </p>
               <p>
-                Once you DM the PairMe bot with `/help React`, the bot will
+                Once you DM the PairMe bot with `help React`, the bot will
                 recognize that there are two people that can be matched for a
                 topic and informs you and the person who volunteered to help you
                 that a match has been made. This
