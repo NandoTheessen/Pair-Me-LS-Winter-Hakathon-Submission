@@ -33,12 +33,16 @@ class App extends Component {
       {
         id: 0,
         imageUrl: certificate_solid,
-        name: 'consecutive_5'
+        name: 'consecutive_5',
+        description:
+          'Great job logging in 5 days in a row! You are super duper!'
       },
       {
         id: 1,
         imageUrl: ribbon_solid,
-        name: 'good_sherpa_5'
+        name: 'good_sherpa_5',
+        description:
+          'Wow, you helped 5 people! You have a heart of gold. Thanks for being you.'
       }
     ]
     /*

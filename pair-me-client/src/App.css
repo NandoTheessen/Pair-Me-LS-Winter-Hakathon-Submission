@@ -144,7 +144,7 @@ table {
 
 :root {
   --background-bg: #7bd3f7;
-  --special-color: ;
+  --badge-background: white;
 }
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat|Oswald|Lobster|Lato');
@@ -405,7 +405,7 @@ body {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
-  height: 25vh;
+  /* height: 25vh; */
 }
 
 .dashboard-banner h1 {
@@ -423,21 +423,53 @@ body {
   border: 2px solid gray;
 }
 
-.badges {
-  text-align: center;
-  border: 2px solid gray;
-  width: 45%;
-}
-
 .active-meetings {
   width: 100%;
   border: 2px solid gray;
   height: 30vh;
   margin: 20px 0px;
 }
+.badges-container {
+  text-align: center;
+  border-radius: 10px;
+  border: 4px solid gray;
+  width: 45%;
+  background: white;
+}
 
+.badges-header {
+  border: 2px solid black;
+  border-radius: 10px;
+  font-size: 2.5rem;
+  width: 70%;
+  margin: 0 auto;
+  font-weight: 100;
+  background: grey;
+  color: white;
+}
+.badges-text {
+  /* border: 2px solid black; */
+  font-size: 1.5rem;
+  padding: 10px 0px;
+  border-radius: 10px;
+}
+
+.badge-container {
+  display: flex;
+  background: var(--badge-background);
+  border: 2px solid rgb(42, 42, 102);
+  border-radius: 10px;
+  background: lightcyan;
+  margin: 0 10px;
+}
+
+.badge-description {
+  font-size: 1.3rem;
+  align-self: center;
+}
 .badge {
   width: 100px;
+  height: 100px;
 }
 /****************************************************************************************************/
 /*** END DASHBOARD ***/
