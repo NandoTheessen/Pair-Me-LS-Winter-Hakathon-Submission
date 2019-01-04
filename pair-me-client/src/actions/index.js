@@ -45,8 +45,36 @@ export const logout = () => {
 
 export const login = ({ access_token, user }) => {
   localStorage.setItem('access_token', access_token)
+  const {
+    email,
+    name,
+    id,
+    image_24,
+    image_32,
+    image_48,
+    image_72,
+    image_192,
+    image_512,
+    image_1024
+  } = user
   return dispatch => {
-    localStorage.setItem('access_token', access_token)
-    dispatch({ type: LOGGED_IN, payload: { access_token, ...user } })
+    dispatch({
+      type: LOGGED_IN,
+      payload: {
+        access_token,
+        email,
+        name,
+        id,
+        images: {
+          image_24,
+          image_32,
+          image_48,
+          image_72,
+          image_192,
+          image_512,
+          image_1024
+        }
+      }
+    })
   }
 }
