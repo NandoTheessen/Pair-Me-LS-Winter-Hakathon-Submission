@@ -420,3 +420,17 @@ body {
 /*************************/
 /** Landing Page Slack **/
 /************************/
+.slack-login {
+  width: 100%;
+  display: block;
+}
+
+.slack-button {
+  top: 50%;
+  display: flex;
+  margin: auto;
+}
+
+.welcome-right {
+  min-width: 170px;
+}

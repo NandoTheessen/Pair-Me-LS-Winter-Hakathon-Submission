@@ -1,43 +1,55 @@
-import React from 'react';
-import {withRouter, NavLink} from 'react-router-dom';
-import {connect} from 'react-redux';
-import {logout} from '../actions/index';
+import React from 'react'
+import { withRouter, NavLink } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { logout } from '../actions/index'
 
-class Navigation extends React.Component{
-    constructor(props){
-        super(props);
-        // set a dummy current user in state
-        this.state = {
-            currentUser: 'CurrentUser'
-        }
+class Navigation extends React.Component {
+  constructor(props) {
+    super(props)
+    // set a dummy current user in state
+    this.state = {
+      currentUser: 'CurrentUser'
     }
+  }
 
-    // logout is handled from the navigation bar via call to logout action
-    handleLogout = event => {
-        event.preventDefault();
-        this.props.logout();
-    }
+  // logout is handled from the navigation bar via call to logout action
+  handleLogout = event => {
+    event.preventDefault()
+    this.props.logout()
+  }
 
-    render(){
-        return(
-            <div className = 'navigation'>
-                <NavLink to = '/'><span className = 'nav-link'>Home</span></NavLink>
-                <NavLink to = '/dashboard'><span className = 'nav-link'>Dashboard</span></NavLink>
-                {/* <NavLink to = '/register'><span className = 'nav-link'>Register</span></NavLink>
+  render() {
+    return (
+      <div className="navigation">
+        <NavLink to="/">
+          <span className="nav-link">Home</span>
+        </NavLink>
+        <NavLink to="/dashboard">
+          <span className="nav-link">Dashboard</span>
+        </NavLink>
+        {/* <NavLink to = '/register'><span className = 'nav-link'>Register</span></NavLink>
                 <NavLink to = '/login'><span className = 'nav-link'>Login</span></NavLink> */}
-                <NavLink to = '#'><span className = 'nav-link' onClick={this.handleLogout}>Logout</span></NavLink>
-
-            </div>
-        )
-    }
+        <NavLink to="#">
+          <span className="nav-link" onClick={this.handleLogout}>
+            Logout
+          </span>
+        </NavLink>
+      </div>
+    )
+  }
 }
 
 const mapStateToProps = state => {
-    return{
-        isLoggedIn: state.isLoggedIn,
-    }
+  return {
+    isLoggedIn: state.isLoggedIn
+  }
 }
 
-export default withRouter(connect(mapStateToProps, {
-    logout,
-})(Navigation))
+export default withRouter(
+  connect(
+    mapStateToProps,
+    {
+      logout
+    }
+  )(Navigation)
+)
