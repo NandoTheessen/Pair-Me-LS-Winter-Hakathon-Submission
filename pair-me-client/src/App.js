@@ -30,7 +30,12 @@ class App extends Component {
         })
         .catch(e => console.log(e))
     } else if (access_token) {
-      axios.post()
+      axios.post(`https://evening-refuge-39471.herokuapp.com/api/users/login`, {
+        access_token
+      }).then(res => {
+        this.props.storeLocally(res.data)
+        this.props.history.push('/dashboard')
+      }).catch(e => console.log(e))
     }
   }
 

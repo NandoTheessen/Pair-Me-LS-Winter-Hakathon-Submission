@@ -11,6 +11,9 @@ const initialState = {
   username: '',
   storing_queues: false,
   queues_stored: false,
+  isLoggedOut: false,
+  userID: null,
+  avatar: null,
 }
 
 export const userReducer = (state = initialState, action) => {
@@ -35,6 +38,9 @@ export const userReducer = (state = initialState, action) => {
         teachers: action.payload.teachers,
         students: action.payload.students,
         username: action.payload.username,
+        avatar: action.payload.avatar,
+        email: action.payload.email,
+        userID: action.payload.id,
         queues_stored: true
       })
 
