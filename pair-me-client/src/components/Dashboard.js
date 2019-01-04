@@ -1,4 +1,3 @@
-
 import React from 'react'
 import '../App.css'
 import { withRouter } from 'react-router-dom'
@@ -16,11 +15,10 @@ class Dashboard extends React.Component {
     return (
       <div className="dashboard-container">
         <div className="dashboard-banner">
-          <h1>Dashboard</h1>
+          <h1 className="title">Dashboard</h1>
         </div>
 
         <div className="beacon-container">
-
           <div className="ask-beacons">[TOPICS ON OFFER]</div>
           <div className="badges-container">
             <div className="badges-header">YOUR BADGES</div>
@@ -36,7 +34,6 @@ class Dashboard extends React.Component {
         </div>
 
         <div className="active-meetings">[ACTIVE MEETINGS]</div>
-
       </div>
     )
   }

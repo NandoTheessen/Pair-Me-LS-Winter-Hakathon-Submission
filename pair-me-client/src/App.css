@@ -477,8 +477,37 @@ body {
 /****************************************************************************************************/
 /*** END DASHBOARD ***/
 /****************************************************************************************************/
-=======
-
 .robot {
   width: 100%;
+}
+
+.slack-login {
+  width: 100%;
+  display: block;
+}
+
+.slack-button {
+  top: 50%;
+  display: flex;
+  margin: auto;
+}
+
+.welcome-right {
+  min-width: 170px;
+}
+
+.slackbot {
+  width: 100%;
+}
+
+.message-wrapper {
+  width: 100%;
+}
+
+.slackMessage {
+  margin-left: 25%;
+}
+.title {
+  font-size: 4rem;
+  line-height: 1.5;
 }
