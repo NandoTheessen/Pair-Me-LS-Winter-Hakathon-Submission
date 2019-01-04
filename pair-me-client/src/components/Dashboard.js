@@ -47,7 +47,7 @@ class Dashboard extends React.Component {
 
       <div className = 'toolbar'>
       <div className = 'toolbar-link'>Profile</div>
-      <div className = 'avatar-container'><div className = 'avatar'><img src = {this.props.avatar}></img></div><p>{username}</p></div>
+      <div className = 'avatar-container'><div className = 'avatar' style = {{backgroundImage: `url(${this.props.avatar})`}}></div><p>{username}</p></div>
       <div className = 'toolbar-link' onClick = {this.handleLogout}>Logout</div>
 
       </div>
